@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t9o-IU-EV0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tracked Expertise Table View Controller-->
+        <scene sceneID="h35-XQ-FLF">
+            <objects>
+                <tableViewController id="t9o-IU-EV0" customClass="TrackedExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="100" sectionFooterHeight="28" id="rtN-q6-LXR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RyJ-ex-OR5">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Tracked Expertises"/>
+                                <segment title="Mastery"/>
+                            </segments>
+                            <connections>
+                                <segue destination="kdD-iX-n3v" kind="show" identifier="ShowSkillsSegue" id="sYI-R2-UTI"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackedExpertiseTableViewCell" rowHeight="90" id="IFw-4h-vYz" customClass="TrackedExpertiseTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="130" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IFw-4h-vYz" id="lgx-td-jOO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntw-kH-bZy">
+                                            <rect key="frame" x="54" y="16" width="305" height="18"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W74-n8-ljB">
+                                            <rect key="frame" x="-13" y="0.0" width="58.5" height="89.5"/>
+                                            <gestureRecognizers/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
+                                            <rect key="frame" x="54" y="38.5" width="305" height="35"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="wmk-GV-jOc"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ntw-kH-bZy" secondAttribute="trailing" constant="8" id="8Bv-Le-57K"/>
+                                        <constraint firstItem="Ntw-kH-bZy" firstAttribute="top" secondItem="lgx-td-jOO" secondAttribute="topMargin" constant="8" id="JYx-ce-yoD"/>
+                                        <constraint firstAttribute="bottom" secondItem="W74-n8-ljB" secondAttribute="bottom" id="Pe7-km-qH0"/>
+                                        <constraint firstItem="Ntw-kH-bZy" firstAttribute="leading" secondItem="W74-n8-ljB" secondAttribute="trailing" constant="8" id="bd2-lU-o4C"/>
+                                        <constraint firstItem="W74-n8-ljB" firstAttribute="top" secondItem="lgx-td-jOO" secondAttribute="top" id="dsC-o2-8hG"/>
+                                        <constraint firstItem="W74-n8-ljB" firstAttribute="centerX" secondItem="lgx-td-jOO" secondAttribute="leadingMargin" constant="8" id="qIN-D9-nNC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="H3O-gA-PJS" secondAttribute="trailing" constant="8" id="rez-dn-3QF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="H3O-gA-PJS" secondAttribute="bottom" constant="8" id="sWG-Sk-LN9"/>
+                                        <constraint firstItem="W74-n8-ljB" firstAttribute="centerY" secondItem="lgx-td-jOO" secondAttribute="centerY" id="vVA-z5-tLu"/>
+                                        <constraint firstItem="H3O-gA-PJS" firstAttribute="leading" secondItem="W74-n8-ljB" secondAttribute="trailing" constant="8" id="whg-V3-RBR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="WeekTracker" destination="H3O-gA-PJS" id="By5-2r-Gyw"/>
+                                    <outlet property="nameLabel" destination="Ntw-kH-bZy" id="t0U-hB-laS"/>
+                                    <outlet property="ratingLabel" destination="W74-n8-ljB" id="wZo-gw-Okc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="t9o-IU-EV0" id="rAA-9p-gP3"/>
+                            <outlet property="delegate" destination="t9o-IU-EV0" id="eBr-M2-aML"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5O6-Wz-duY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1790" y="-99"/>
+        </scene>
+        <!--Skill Table View Controller-->
+        <scene sceneID="aqL-vf-3zO">
+            <objects>
+                <tableViewController id="kdD-iX-n3v" customClass="SkillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dbI-kB-vCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="KEN-Wr-kVc">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Tracked Expertises"/>
+                                <segment title="Mastery"/>
+                            </segments>
+                            <connections>
+                                <segue destination="t9o-IU-EV0" kind="show" identifier="" id="YYm-bl-BfP"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SkillTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkillTableViewCell" rowHeight="90" id="34g-yQ-OPG" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34g-yQ-OPG" id="geQ-L2-7D0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9Z-yJ-Q23">
+                                            <rect key="frame" x="8" y="8" width="15" height="74"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-W0-N9j">
+                                            <rect key="frame" x="31" y="8" width="200" height="73.5"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="f9Z-yJ-Q23" firstAttribute="top" secondItem="geQ-L2-7D0" secondAttribute="topMargin" id="8xk-Dc-qFH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="f9Z-yJ-Q23" secondAttribute="bottom" id="9Js-Dj-Vqc"/>
+                                        <constraint firstItem="WFM-W0-N9j" firstAttribute="centerY" secondItem="geQ-L2-7D0" secondAttribute="centerY" id="GGF-rC-ImC"/>
+                                        <constraint firstItem="WFM-W0-N9j" firstAttribute="leading" secondItem="f9Z-yJ-Q23" secondAttribute="trailing" constant="8" id="NYg-zK-omT"/>
+                                        <constraint firstItem="f9Z-yJ-Q23" firstAttribute="leading" secondItem="geQ-L2-7D0" secondAttribute="leadingMargin" id="OKk-hV-xPh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WFM-W0-N9j" secondAttribute="bottom" id="j0K-ON-N0o"/>
+                                        <constraint firstItem="WFM-W0-N9j" firstAttribute="top" secondItem="geQ-L2-7D0" secondAttribute="topMargin" id="otY-ay-AI1"/>
+                                        <constraint firstItem="f9Z-yJ-Q23" firstAttribute="centerY" secondItem="geQ-L2-7D0" secondAttribute="centerY" id="prB-vw-mz7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="WFM-W0-N9j" id="APO-Cm-Lye"/>
+                                    <outlet property="ratingLabel" destination="f9Z-yJ-Q23" id="qqe-nI-2Df"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kdD-iX-n3v" id="oNy-s7-SmN"/>
+                            <outlet property="delegate" destination="kdD-iX-n3v" id="Ffc-Fg-4qQ"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Ltd-QF-8I3" kind="show" identifier="ShowSubskillsSegue" id="o7S-BG-dTw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6TD-KC-4di" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-898" y="-100"/>
+        </scene>
+        <!--SubskillTableViewController-->
+        <scene sceneID="xnq-TZ-r4h">
+            <objects>
+                <tableViewController title="SubskillTableViewController" id="Ltd-QF-8I3" customClass="SubskillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ldr-Bw-iLt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="NwK-VN-pZv">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Tracked Expertises"/>
+                                <segment title="Mastery"/>
+                            </segments>
+                            <connections>
+                                <segue destination="t9o-IU-EV0" kind="show" id="BhX-GD-q0r"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SkillTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubskillTableViewCell" rowHeight="90" id="obJ-nm-t3Q" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obJ-nm-t3Q" id="qAf-qk-0Ga">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUD-Lf-8l5">
+                                            <rect key="frame" x="8" y="8" width="15" height="74"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UwH-9M-nNK">
+                                            <rect key="frame" x="31" y="8" width="200" height="73.5"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UwH-9M-nNK" firstAttribute="leading" secondItem="WUD-Lf-8l5" secondAttribute="trailing" constant="8" id="80Q-AZ-bFF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WUD-Lf-8l5" secondAttribute="bottom" id="8Vp-Qg-wzZ"/>
+                                        <constraint firstItem="WUD-Lf-8l5" firstAttribute="top" secondItem="qAf-qk-0Ga" secondAttribute="topMargin" id="DRV-em-W5K"/>
+                                        <constraint firstItem="WUD-Lf-8l5" firstAttribute="leading" secondItem="qAf-qk-0Ga" secondAttribute="leadingMargin" id="IaN-Sf-Ybo"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="UwH-9M-nNK" secondAttribute="bottom" id="TW2-MZ-01B"/>
+                                        <constraint firstItem="UwH-9M-nNK" firstAttribute="centerY" secondItem="qAf-qk-0Ga" secondAttribute="centerY" id="XmJ-w9-qbb"/>
+                                        <constraint firstItem="UwH-9M-nNK" firstAttribute="top" secondItem="qAf-qk-0Ga" secondAttribute="topMargin" id="dqX-1l-iFt"/>
+                                        <constraint firstItem="WUD-Lf-8l5" firstAttribute="centerY" secondItem="qAf-qk-0Ga" secondAttribute="centerY" id="ruX-yb-u8b"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="UwH-9M-nNK" id="J8b-6c-EDP"/>
+                                    <outlet property="ratingLabel" destination="WUD-Lf-8l5" id="xSV-Vi-19z"/>
+                                    <segue destination="2wz-Vy-A8w" kind="show" identifier="ShowExpertisesSegue" id="TE9-m4-IpB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ltd-QF-8I3" id="bPk-Om-y4g"/>
+                            <outlet property="delegate" destination="Ltd-QF-8I3" id="uF4-NR-QqD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FMm-bJ-PIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="-99"/>
+        </scene>
+        <!--ExpertiseTableViewController-->
+        <scene sceneID="DZH-22-XYO">
+            <objects>
+                <tableViewController title="ExpertiseTableViewController" id="2wz-Vy-A8w" customClass="ExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D64-aI-jbi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="WjM-YK-0L6">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Tracked Expertises"/>
+                                <segment title="Mastery"/>
+                            </segments>
+                            <connections>
+                                <segue destination="t9o-IU-EV0" kind="show" id="54H-sB-NXF"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpertiseTableViewCell" rowHeight="90" id="Mei-Zk-kzt" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mei-Zk-kzt" id="s8H-iF-iIb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-DK-yng">
+                                            <rect key="frame" x="8" y="8" width="15" height="74"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REY-ma-GRi">
+                                            <rect key="frame" x="31" y="8" width="200" height="73.5"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mTe-DK-yng" firstAttribute="centerY" secondItem="s8H-iF-iIb" secondAttribute="centerY" id="2uv-Ct-jIS"/>
+                                        <constraint firstItem="REY-ma-GRi" firstAttribute="leading" secondItem="mTe-DK-yng" secondAttribute="trailing" constant="8" id="5Dm-M5-v1V"/>
+                                        <constraint firstItem="REY-ma-GRi" firstAttribute="centerY" secondItem="s8H-iF-iIb" secondAttribute="centerY" id="DCO-Vt-lns"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="REY-ma-GRi" secondAttribute="bottom" id="EkO-G9-Abm"/>
+                                        <constraint firstItem="mTe-DK-yng" firstAttribute="top" secondItem="s8H-iF-iIb" secondAttribute="topMargin" id="fjR-c0-WUX"/>
+                                        <constraint firstItem="mTe-DK-yng" firstAttribute="leading" secondItem="s8H-iF-iIb" secondAttribute="leadingMargin" id="h40-88-PVb"/>
+                                        <constraint firstItem="REY-ma-GRi" firstAttribute="top" secondItem="s8H-iF-iIb" secondAttribute="topMargin" id="j7u-tF-o0k"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mTe-DK-yng" secondAttribute="bottom" id="ky4-qP-RvL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="REY-ma-GRi" id="PdG-lK-rmb"/>
+                                    <outlet property="ratingLabel" destination="mTe-DK-yng" id="UUB-OB-2bv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2wz-Vy-A8w" id="Duy-cE-TgN"/>
+                            <outlet property="delegate" destination="2wz-Vy-A8w" id="EFa-Fc-8Jn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9k0-j6-rTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="-99"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="54H-sB-NXF"/>
+    </inferredMetricsTieBreakers>
+</document>

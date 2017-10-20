@@ -1,0 +1,6 @@
+framework module Pods_MasteryTracker {
+  umbrella header "Pods-MasteryTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
