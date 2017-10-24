@@ -7,6 +7,7 @@ target 'MasteryTracker' do
 
   # Pods for MasteryTracker
   pod 'SwiftFormat/CLI'
+  pod 'SQLite.swift'
 
   target 'MasteryTrackerTests' do
     inherit! :search_paths

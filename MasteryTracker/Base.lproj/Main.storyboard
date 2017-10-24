@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t9o-IU-EV0">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,11 +16,11 @@
             <objects>
                 <tableViewController id="t9o-IU-EV0" customClass="TrackedExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="100" sectionFooterHeight="28" id="rtN-q6-LXR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="RyJ-ex-OR5">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Tracked Expertises"/>
@@ -31,30 +32,30 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackedExpertiseTableViewCell" rowHeight="90" id="IFw-4h-vYz" customClass="TrackedExpertiseTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="130" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IFw-4h-vYz" id="lgx-td-jOO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntw-kH-bZy">
-                                            <rect key="frame" x="54" y="16" width="305" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntw-kH-bZy">
+                                            <rect key="frame" x="33" y="16" width="365" height="18"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W74-n8-ljB">
-                                            <rect key="frame" x="-13" y="0.0" width="58.5" height="89.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W74-n8-ljB">
+                                            <rect key="frame" x="8.6666666666666643" y="0.0" width="16" height="89.666666666666671"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
-                                            <rect key="frame" x="54" y="38.5" width="305" height="35"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
+                                            <rect key="frame" x="33" y="38.666666666666671" width="365" height="35.000000000000014"/>
                                             <gestureRecognizers/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="wmk-GV-jOc"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="wmk-GV-jOc"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -64,6 +65,7 @@
                                         <constraint firstAttribute="bottom" secondItem="W74-n8-ljB" secondAttribute="bottom" id="Pe7-km-qH0"/>
                                         <constraint firstItem="Ntw-kH-bZy" firstAttribute="leading" secondItem="W74-n8-ljB" secondAttribute="trailing" constant="8" id="bd2-lU-o4C"/>
                                         <constraint firstItem="W74-n8-ljB" firstAttribute="top" secondItem="lgx-td-jOO" secondAttribute="top" id="dsC-o2-8hG"/>
+                                        <constraint firstItem="H3O-gA-PJS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ntw-kH-bZy" secondAttribute="bottom" constant="5" id="ijU-Ws-yuY"/>
                                         <constraint firstItem="W74-n8-ljB" firstAttribute="centerX" secondItem="lgx-td-jOO" secondAttribute="leadingMargin" constant="8" id="qIN-D9-nNC"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="H3O-gA-PJS" secondAttribute="trailing" constant="8" id="rez-dn-3QF"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="H3O-gA-PJS" secondAttribute="bottom" constant="8" id="sWG-Sk-LN9"/>
@@ -93,11 +95,11 @@
             <objects>
                 <tableViewController id="kdD-iX-n3v" customClass="SkillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dbI-kB-vCJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="KEN-Wr-kVc">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Tracked Expertises"/>
@@ -109,10 +111,10 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SkillTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkillTableViewCell" rowHeight="90" id="34g-yQ-OPG" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="58" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34g-yQ-OPG" id="geQ-L2-7D0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9Z-yJ-Q23">
@@ -124,8 +126,8 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-W0-N9j">
-                                            <rect key="frame" x="31" y="8" width="200" height="73.5"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-W0-N9j">
+                                            <rect key="frame" x="31" y="8" width="8" height="73.666666666666671"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -169,11 +171,11 @@
             <objects>
                 <tableViewController title="SubskillTableViewController" id="Ltd-QF-8I3" customClass="SubskillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ldr-Bw-iLt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="NwK-VN-pZv">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Tracked Expertises"/>
@@ -185,10 +187,10 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SkillTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubskillTableViewCell" rowHeight="90" id="obJ-nm-t3Q" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="58" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obJ-nm-t3Q" id="qAf-qk-0Ga">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WUD-Lf-8l5">
@@ -200,8 +202,8 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UwH-9M-nNK">
-                                            <rect key="frame" x="31" y="8" width="200" height="73.5"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UwH-9M-nNK">
+                                            <rect key="frame" x="31" y="8" width="8" height="73.666666666666671"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -243,11 +245,11 @@
             <objects>
                 <tableViewController title="ExpertiseTableViewController" id="2wz-Vy-A8w" customClass="ExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D64-aI-jbi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="WjM-YK-0L6">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Tracked Expertises"/>
@@ -259,10 +261,10 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpertiseTableViewCell" rowHeight="90" id="Mei-Zk-kzt" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="58" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mei-Zk-kzt" id="s8H-iF-iIb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-DK-yng">
@@ -270,12 +272,15 @@
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             </accessibility>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="gmg-eu-VeN"/>
+                                            </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REY-ma-GRi">
-                                            <rect key="frame" x="31" y="8" width="200" height="73.5"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Banana" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REY-ma-GRi">
+                                            <rect key="frame" x="31" y="8" width="367" height="73.666666666666671"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -289,6 +294,8 @@
                                         <constraint firstItem="REY-ma-GRi" firstAttribute="leading" secondItem="mTe-DK-yng" secondAttribute="trailing" constant="8" id="5Dm-M5-v1V"/>
                                         <constraint firstItem="REY-ma-GRi" firstAttribute="centerY" secondItem="s8H-iF-iIb" secondAttribute="centerY" id="DCO-Vt-lns"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="REY-ma-GRi" secondAttribute="bottom" id="EkO-G9-Abm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="REY-ma-GRi" secondAttribute="trailing" constant="8" id="KvA-Ey-1Ih"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="REY-ma-GRi" secondAttribute="trailing" constant="8" id="MFa-KO-goj"/>
                                         <constraint firstItem="mTe-DK-yng" firstAttribute="top" secondItem="s8H-iF-iIb" secondAttribute="topMargin" id="fjR-c0-WUX"/>
                                         <constraint firstItem="mTe-DK-yng" firstAttribute="leading" secondItem="s8H-iF-iIb" secondAttribute="leadingMargin" id="h40-88-PVb"/>
                                         <constraint firstItem="REY-ma-GRi" firstAttribute="top" secondItem="s8H-iF-iIb" secondAttribute="topMargin" id="j7u-tF-o0k"/>
@@ -313,6 +320,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="54H-sB-NXF"/>
+        <segue reference="BhX-GD-q0r"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -79,10 +79,9 @@ import UIKit
         
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: daySize.width).isActive = true
-            button.widthAnchor.constraint(equalToConstant: daySize.height).isActive = true
-         
-            //Setup the button action
+           button.heightAnchor.constraint(lessThanOrEqualToConstant: daySize.width).isActive = true
+            button.widthAnchor.constraint(lessThanOrEqualToConstant: daySize.height).isActive = true
+            NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: button, attribute: .height, multiplier: 1.0, constant: 0.0).isActive = true//Setup the button action
             button.addTarget(self, action: #selector(WeekTracker.dayButtonLongPressed(button:)), for: .touchUpInside)
         
             // Add the button to the stack

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "616FA1625F0355E9575ED5E0CFD1AABC"
+               BlueprintIdentifier = "765DEF7EBC3CBDE9DBB4B272A22E0659"
                BuildableName = "Pods_MasteryTracker.framework"
                BlueprintName = "Pods-MasteryTracker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "616FA1625F0355E9575ED5E0CFD1AABC"
+            BlueprintIdentifier = "765DEF7EBC3CBDE9DBB4B272A22E0659"
             BuildableName = "Pods_MasteryTracker.framework"
             BlueprintName = "Pods-MasteryTracker"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -59,7 +59,7 @@ class TrackedExpertiseTableViewController: UITableViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
         // Load Sample Data
         loadSampleExpertises()
 
@@ -76,7 +76,6 @@ class TrackedExpertiseTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

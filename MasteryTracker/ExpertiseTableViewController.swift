@@ -15,6 +15,7 @@ class ExpertiseTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
         expertises = FakeDatabase().database[skillNum!].subskills[subskillNum!].expertises
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
