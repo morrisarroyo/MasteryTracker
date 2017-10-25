@@ -15,16 +15,16 @@ class TrackedExpertiseTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleExpertises() {
-        guard let expertise1 = Expertise(id:"100", name: "Facial Anatomy", rating: 2, tracked: false, subskillId:"10") else {
+        guard let expertise1 = Expertise(id:8, name: "Facial Anatomy", rating: 2, tracked: false, subskillId:5) else {
             fatalError("Unable to instantiate expertise1")
         }
-        guard let expertise2 = Expertise(id:"101", name: "Cross Hatching", rating: 3, tracked: false, subskillId: "10") else {
+        guard let expertise2 = Expertise(id:9, name: "Cross Hatching", rating: 3, tracked: false, subskillId: 6) else {
             fatalError("Unable to instantiate expertise2")
         }
-        guard let expertise3 = Expertise(id: "102", name: "Head 3/4 View ", rating: 1, tracked: false, subskillId: "10") else {
+        guard let expertise3 = Expertise(id: 10, name: "Head 3/4 View ", rating: 1, tracked: false, subskillId: 7) else {
             fatalError("Unable to instantiate expertise3")
         }
-        expertises += [expertise1, expertise2, expertise3]
+        expertises = Expertise.getTrackedExpertises()
     }
     
     //MARK: Table View Functions

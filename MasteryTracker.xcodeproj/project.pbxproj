@@ -148,20 +148,20 @@
 		9AE779E01F97F37400F385CC /* MasteryTracker */ = {
 			isa = PBXGroup;
 			children = (
-				9A074B0D1F99F2FB00860721 /* Subskill.swift */,
 				9AE779E11F97F37400F385CC /* AppDelegate.swift */,
 				9A81E9AF1F9DB54D00500589 /* Database.swift */,
 				9A074B111F99F9D800860721 /* FakeDatabase.swift */,
 				9A074B051F99DFA400860721 /* Expertise.swift */,
 				9A074B0B1F99F0B800860721 /* Skill.swift */,
+				9A074B0D1F99F2FB00860721 /* Subskill.swift */,
 				9A074B001F99A1E900860721 /* WeekTracker.swift */,
 				9AE77A101F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift */,
 				9A074B091F99EAE200860721 /* EntryTableViewCell.swift */,
 				9AE779E31F97F37400F385CC /* ViewController.swift */,
-				9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */,
+				9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */,
 				9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */,
 				9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */,
-				9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */,
+				9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */,
 				9AE779EA1F97F37400F385CC /* LaunchScreen.storyboard */,
 				9AE779E51F97F37400F385CC /* Main.storyboard */,
 				9AE779E81F97F37400F385CC /* Assets.xcassets */,

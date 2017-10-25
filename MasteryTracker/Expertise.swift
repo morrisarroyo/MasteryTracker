@@ -6,22 +6,20 @@
 //
 
 import UIKit
+import SQLite
 
 class Expertise {
     
     //MARK: Properties
-    var id: String
+    let tableName: String = "expertises"
+    var id: Int
     var name: String
     var rating: Int
     var tracked: Bool
-    var subskillId: String
+    var subskillId: Int
     
     //MARK: Initialization
-    init?(id: String, name: String, rating: Int, tracked: Bool = false, subskillId: String) {
-        
-        guard !id.isEmpty else {
-            return nil
-        }
+    init?(id: Int, name: String, rating: Int, tracked: Bool = false, subskillId: Int) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -33,14 +31,35 @@ class Expertise {
             return nil
         }
         
-        guard !subskillId.isEmpty else {
-            return nil
-        }
-        
         self.id = id
         self.name = name
         self.rating = rating
         self.tracked = tracked
         self.subskillId = subskillId
+    }
+    
+    static func getTrackedExpertises() -> [Expertise]{
+        let id = Expression<Int>("id")
+        let name = Expression<String>("name")
+        let rating = Expression<Int>("rating")
+        let tracked = Expression<Bool>("tracked")
+        let subskillId = Expression<Int>("subskillId")
+        
+        
+        let db = Database().db
+        let expertisesTable = Table("expertises")
+        var expertises = [Expertise]()
+        let query = expertisesTable.filter(tracked == true)
+        do {
+            for expertise in try db.prepare(query) {
+                    let exp = Expertise(id: try expertise.get(id),  name: try expertise.get(name), rating: try expertise.get(rating), tracked: try expertise.get(tracked), subskillId: try expertise.get(subskillId))
+                    expertises.append(exp!)
+            }
+        } catch {
+            fatalError("Failed to get instance of Expertise from database");
+        }
+        
+        return expertises
+        
     }
 }

@@ -13,13 +13,13 @@ class FakeDatabase {
     
     init() {
         //Skill 0 - Anatomy
-        let expertise000 = Expertise(id: "000", name: "Facial Structure", rating: 2, tracked: true, subskillId: "00")
-        let expertise001 = Expertise(id: "001", name:"Facial Muscles", rating: 1, tracked: true, subskillId: "00")
-        let subskill00 = Subskill(id: "00", name: "Facial Anatomy", rating: 2, expertises: [expertise000!, expertise001!], skillId: "0")
-        let expertise010 = Expertise(id: "010", name: "Torso Structure", rating: 1, tracked: true, subskillId: "01")
-        let expertise011 = Expertise(id: "011",name: "Torso Muscles", rating: 2, tracked: false, subskillId: "01")
-        let subskill01 = Subskill(id: "01", name: "Torso Anatomy", rating: 2, expertises: [expertise010!, expertise011!], skillId: "0")
-        let skill0 = Skill(id: "0", name: "Anatomy", rating: 1, subskills: [subskill00!, subskill01!])
+        let expertise000 = Expertise(id: 0, name: "Facial Structure", rating: 2, tracked: true, subskillId: 0)
+        let expertise001 = Expertise(id: 1, name:"Facial Muscles", rating: 1, tracked: true, subskillId: 0)
+        let subskill00 = Subskill(id: 0, name: "Facial Anatomy", rating: 2, expertises: [expertise000!, expertise001!], skillId: 0)
+        let expertise010 = Expertise(id: 2, name: "Torso Structure", rating: 1, tracked: true, subskillId: 1)
+        let expertise011 = Expertise(id: 3,name: "Torso Muscles", rating: 2, tracked: false, subskillId: 1)
+        let subskill01 = Subskill(id: 1, name: "Torso Anatomy", rating: 2, expertises: [expertise010!, expertise011!], skillId: 0)
+        let skill0 = Skill(id: 0, name: "Anatomy", rating: 1, subskills: [subskill00!, subskill01!])
         //Skill 1 - Color
         //Skill 2 - Line Consistency
         //Skill 3 - Gesture
@@ -28,13 +28,13 @@ class FakeDatabase {
         //Skill 6 - Caricature
         //Skill 7 - Cartoon
         //Skill 8 - Action/Motion
-        let expertise800 = Expertise(id: "800", name: "Running Weight Distribution", rating: 0, tracked: false, subskillId: "80")
-        let expertise801 = Expertise(id: "801", name: "Receiving Attack Weight Distribution", rating: 0, tracked: false, subskillId: "80")
-        let subskill80 = Subskill(id: "80", name: "Weight Distribution", rating: 0, expertises: [expertise800!, expertise801!], skillId: "8")
-        let expertise810 = Expertise(id: "810", name: "Towards Screen Foreshortening", rating: 0, tracked: false, subskillId: "81")
-        let expertise811 = Expertise(id: "811", name: "Away from Screen Foreshortening", rating: 0, tracked: false, subskillId: "81")
-        let subskill81 = Subskill(id:"81", name: "Foreshortening", rating: 0, expertises: [expertise810!, expertise811!], skillId: "8")
-        let skill8 = Skill(id: "8", name:"Action/Motion", rating: 0, subskills: [subskill80!, subskill81!])
+        let expertise800 = Expertise(id: 4, name: "Running Weight Distribution", rating: 0, tracked: false, subskillId: 2)
+        let expertise801 = Expertise(id: 5, name: "Receiving Attack Weight Distribution", rating: 0, tracked: false, subskillId: 2)
+        let subskill80 = Subskill(id: 2, name: "Weight Distribution", rating: 0, expertises: [expertise800!, expertise801!], skillId: 1)
+        let expertise810 = Expertise(id: 6, name: "Towards Screen Foreshortening", rating: 0, tracked: false, subskillId: 3)
+        let expertise811 = Expertise(id: 7, name: "Away from Screen Foreshortening", rating: 0, tracked: false, subskillId: 3)
+        let subskill81 = Subskill(id:3, name: "Foreshortening", rating: 0, expertises: [expertise810!, expertise811!], skillId: 1)
+        let skill8 = Skill(id: 1, name:"Action/Motion", rating: 0, subskills: [subskill80!, subskill81!])
         //Skill 9 - Copying
         
         self.database = [skill0!, skill8!]
@@ -44,10 +44,8 @@ class FakeDatabase {
         return database
     }
     
-    func getSubskills( skillId : String ) -> [Subskill] {
-        guard !skillId.isEmpty else {
-            fatalError("The skill id, \(skillId), is empty")
-        }
+    func getSubskills( skillId : Int ) -> [Subskill] {
+        
         var sk: Skill = database[0]
         database.forEach {
             skill in
@@ -58,10 +56,8 @@ class FakeDatabase {
         //fatalError("The skill id, \(skillId), is not a valid skillId")
     }
     
-    func getExpertises( subskillId : String ) -> [Expertise] {
-        guard !subskillId.isEmpty else {
-            fatalError("The skill id, \(subskillId), is empty")
-        }
+    func getExpertises( subskillId : Int ) -> [Expertise] {
+        
         var sk: Subskill = database[0].subskills[0]
         database.forEach {
             skill in
