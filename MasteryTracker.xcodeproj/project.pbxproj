@@ -10,7 +10,6 @@
 		96A2C4380781A83B0FBB1A6E /* Pods_MasteryTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17A8BB956A61845F21368EB /* Pods_MasteryTrackerTests.framework */; };
 		9A074B011F99A1E900860721 /* WeekTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B001F99A1E900860721 /* WeekTracker.swift */; };
 		9A074B041F99DF3B00860721 /* TrackedExpertiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */; };
-		9A074B061F99DFA400860721 /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B051F99DFA400860721 /* Expertise.swift */; };
 		9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B091F99EAE200860721 /* EntryTableViewCell.swift */; };
 		9A074B0C1F99F0B800860721 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B0B1F99F0B800860721 /* Skill.swift */; };
 		9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B0D1F99F2FB00860721 /* Subskill.swift */; };
@@ -19,6 +18,9 @@
 		9A08A6421F9A66F700C136AC /* SubskillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */; };
 		9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */; };
 		9A81E9B01F9DB54D00500589 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81E9AF1F9DB54D00500589 /* Database.swift */; };
+		9A92E8E41FA029DA0072434C /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E31FA029DA0072434C /* Expertise.swift */; };
+		9A92E8E91FA02C560072434C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E81FA02C560072434C /* Utility.swift */; };
+		9A92E8ED1FA044FD0072434C /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 9A92E8EC1FA044FC0072434C /* Data */; };
 		9AE779E21F97F37400F385CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE779E11F97F37400F385CC /* AppDelegate.swift */; };
 		9AE779E41F97F37400F385CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE779E31F97F37400F385CC /* ViewController.swift */; };
 		9AE779E71F97F37400F385CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE779E51F97F37400F385CC /* Main.storyboard */; };
@@ -56,7 +58,6 @@
 		739AC2FE179EFF7646CFCC1A /* Pods-MasteryTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasteryTrackerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasteryTrackerUITests/Pods-MasteryTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A074B001F99A1E900860721 /* WeekTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTracker.swift; sourceTree = "<group>"; };
 		9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedExpertiseTableViewController.swift; sourceTree = "<group>"; };
-		9A074B051F99DFA400860721 /* Expertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expertise.swift; path = /Users/morrisarroyo/Documents/Xcode/MasteryTracker/MasteryTracker/Expertise.swift; sourceTree = "<absolute>"; };
 		9A074B091F99EAE200860721 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		9A074B0B1F99F0B800860721 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		9A074B0D1F99F2FB00860721 /* Subskill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subskill.swift; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubskillTableViewController.swift; sourceTree = "<group>"; };
 		9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertiseTableViewController.swift; sourceTree = "<group>"; };
 		9A81E9AF1F9DB54D00500589 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9A92E8E31FA029DA0072434C /* Expertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expertise.swift; sourceTree = "<group>"; };
+		9A92E8E81FA02C560072434C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		9A92E8EC1FA044FC0072434C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		9AE779DE1F97F37400F385CC /* MasteryTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasteryTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE779E11F97F37400F385CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE779E31F97F37400F385CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,57 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A92E8DE1FA028090072434C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A81E9AF1F9DB54D00500589 /* Database.swift */,
+				9A074B111F99F9D800860721 /* FakeDatabase.swift */,
+				9A92E8E31FA029DA0072434C /* Expertise.swift */,
+				9A074B0B1F99F0B800860721 /* Skill.swift */,
+				9A074B0D1F99F2FB00860721 /* Subskill.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A92E8DF1FA0282F0072434C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A92E8E01FA028470072434C /* PartialViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A92E8E01FA028470072434C /* PartialViews */ = {
+			isa = PBXGroup;
+			children = (
+				9A074B001F99A1E900860721 /* WeekTracker.swift */,
+				9AE77A101F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift */,
+				9A074B091F99EAE200860721 /* EntryTableViewCell.swift */,
+			);
+			path = PartialViews;
+			sourceTree = "<group>";
+		};
+		9A92E8E11FA0285D0072434C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AE779E31F97F37400F385CC /* ViewController.swift */,
+				9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */,
+				9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */,
+				9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */,
+				9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9A92E8E21FA028810072434C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9AE779EA1F97F37400F385CC /* LaunchScreen.storyboard */,
+				9AE779E51F97F37400F385CC /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		9AE779D51F97F37400F385CC = {
 			isa = PBXGroup;
 			children = (
@@ -148,22 +203,13 @@
 		9AE779E01F97F37400F385CC /* MasteryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9A92E8EC1FA044FC0072434C /* Data */,
 				9AE779E11F97F37400F385CC /* AppDelegate.swift */,
-				9A81E9AF1F9DB54D00500589 /* Database.swift */,
-				9A074B111F99F9D800860721 /* FakeDatabase.swift */,
-				9A074B051F99DFA400860721 /* Expertise.swift */,
-				9A074B0B1F99F0B800860721 /* Skill.swift */,
-				9A074B0D1F99F2FB00860721 /* Subskill.swift */,
-				9A074B001F99A1E900860721 /* WeekTracker.swift */,
-				9AE77A101F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift */,
-				9A074B091F99EAE200860721 /* EntryTableViewCell.swift */,
-				9AE779E31F97F37400F385CC /* ViewController.swift */,
-				9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */,
-				9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */,
-				9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */,
-				9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */,
-				9AE779EA1F97F37400F385CC /* LaunchScreen.storyboard */,
-				9AE779E51F97F37400F385CC /* Main.storyboard */,
+				9A92E8E81FA02C560072434C /* Utility.swift */,
+				9A92E8E11FA0285D0072434C /* Controllers */,
+				9A92E8DE1FA028090072434C /* Models */,
+				9A92E8E21FA028810072434C /* Storyboards */,
+				9A92E8DF1FA0282F0072434C /* Views */,
 				9AE779E81F97F37400F385CC /* Assets.xcassets */,
 				9AE779ED1F97F37400F385CC /* Info.plist */,
 			);
@@ -320,6 +366,7 @@
 			files = (
 				9AE779EC1F97F37400F385CC /* LaunchScreen.storyboard in Resources */,
 				9AE779E91F97F37400F385CC /* Assets.xcassets in Resources */,
+				9A92E8ED1FA044FD0072434C /* Data in Resources */,
 				9AE779E71F97F37400F385CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,13 +561,14 @@
 				9AE779E41F97F37400F385CC /* ViewController.swift in Sources */,
 				9AE77A111F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift in Sources */,
 				9A08A6421F9A66F700C136AC /* SubskillTableViewController.swift in Sources */,
+				9A92E8E91FA02C560072434C /* Utility.swift in Sources */,
+				9A92E8E41FA029DA0072434C /* Expertise.swift in Sources */,
 				9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */,
 				9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */,
 				9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */,
 				9A074B041F99DF3B00860721 /* TrackedExpertiseTableViewController.swift in Sources */,
 				9A074B0C1F99F0B800860721 /* Skill.swift in Sources */,
 				9AE779E21F97F37400F385CC /* AppDelegate.swift in Sources */,
-				9A074B061F99DFA400860721 /* Expertise.swift in Sources */,
 				9A81E9B01F9DB54D00500589 /* Database.swift in Sources */,
 				9A074B121F99F9D800860721 /* FakeDatabase.swift in Sources */,
 			);

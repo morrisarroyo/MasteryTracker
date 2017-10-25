@@ -15,6 +15,7 @@ class TrackedExpertiseTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleExpertises() {
+        /*
         guard let expertise1 = Expertise(id:8, name: "Facial Anatomy", rating: 2, tracked: false, subskillId:5) else {
             fatalError("Unable to instantiate expertise1")
         }
@@ -24,6 +25,7 @@ class TrackedExpertiseTableViewController: UITableViewController {
         guard let expertise3 = Expertise(id: 10, name: "Head 3/4 View ", rating: 1, tracked: false, subskillId: 7) else {
             fatalError("Unable to instantiate expertise3")
         }
+         */
         expertises = Expertise.getTrackedExpertises()
     }
     

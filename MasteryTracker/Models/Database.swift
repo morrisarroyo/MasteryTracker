@@ -19,8 +19,6 @@ class Database {
         } catch {
             fatalError("Could not connect to database")
         }
-           
-        
     }
     
     func createTables() {
@@ -67,6 +65,8 @@ class Database {
         } catch {
             fatalError("Could not create expertises table")
         }
+        
+        
         do {
             try db.run(expertises.insert(or: .replace, name <- "Facial Structure", rating <- 2, tracked <- true, subskillId <- 0))
             try db.run(expertises.insert(or: .replace, name <- "Facial Muscles", rating <- 1, tracked <- true, subskillId <- 0))
@@ -75,5 +75,6 @@ class Database {
         } catch {
             print("insertion failed: \(error)")
         }
+        
     }
 }
