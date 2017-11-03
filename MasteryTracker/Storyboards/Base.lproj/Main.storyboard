@@ -87,6 +87,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mastery Tracker" id="woj-eU-4Wj"/>
+                    <connections>
+                        <outlet property="trackedToggle" destination="RyJ-ex-OR5" id="mey-IC-hJg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O6-Wz-duY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,7 +231,6 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="UwH-9M-nNK" id="J8b-6c-EDP"/>
                                     <outlet property="ratingLabel" destination="WUD-Lf-8l5" id="xSV-Vi-19z"/>
-                                    <segue destination="2wz-Vy-A8w" kind="show" identifier="ShowExpertisesSegue" id="TE9-m4-IpB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -237,6 +239,9 @@
                             <outlet property="delegate" destination="Ltd-QF-8I3" id="uF4-NR-QqD"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="2wz-Vy-A8w" kind="show" identifier="ShowExpertisesSegue" id="ZQf-PH-1D0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMm-bJ-PIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,9 +294,6 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <segue destination="c1x-Ht-6Zx" kind="show" id="bkj-DI-hml"/>
-                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -318,25 +320,94 @@
                             <outlet property="delegate" destination="2wz-Vy-A8w" id="EFa-Fc-8Jn"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="c1x-Ht-6Zx" kind="show" identifier="ShowExpertiseCriteriaSegue" id="d76-De-S2g"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k0-j6-rTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="697" y="-99"/>
         </scene>
-        <!--Criteria-->
+        <!--Expertise Criteria-->
         <scene sceneID="L0e-DD-CAQ">
             <objects>
-                <viewController title="Criteria" id="c1x-Ht-6Zx" sceneMemberID="viewController">
+                <viewController title="Expertise Criteria" id="c1x-Ht-6Zx" customClass="ExpertiseCriteriaViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXo-Q5-xi2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRC-VC-7wB">
+                                <rect key="frame" x="0.0" y="92" width="414" height="644"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingDescription" rowHeight="90" id="tFf-SA-2nK">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tFf-SA-2nK" id="43m-7l-zMa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fS-cd-1GY" userLabel="criteriaName">
+                                                    <rect key="frame" x="46" y="7.9999999999999982" width="360" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCV-fN-pTW" userLabel="criteriaRating">
+                                                    <rect key="frame" x="8" y="0.0" width="30" height="89.666666666666671"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="aoA-NH-n7l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beq-ca-Bxj" userLabel="criteriaDescription">
+                                                    <rect key="frame" x="46" y="55.666666666666671" width="368" height="18.000000000000014"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="qCV-fN-pTW" secondAttribute="bottom" id="2zw-Ww-IRc"/>
+                                                <constraint firstItem="Beq-ca-Bxj" firstAttribute="leading" secondItem="qCV-fN-pTW" secondAttribute="trailing" constant="8" id="6Zr-aB-yg9"/>
+                                                <constraint firstAttribute="trailing" secondItem="1fS-cd-1GY" secondAttribute="trailing" constant="8" id="6mr-53-2LX"/>
+                                                <constraint firstItem="Beq-ca-Bxj" firstAttribute="trailing" secondItem="43m-7l-zMa" secondAttribute="trailingMargin" constant="8" id="7V2-px-2t6"/>
+                                                <constraint firstItem="qCV-fN-pTW" firstAttribute="leading" secondItem="43m-7l-zMa" secondAttribute="leading" constant="8" id="Uba-Tt-FUK"/>
+                                                <constraint firstItem="qCV-fN-pTW" firstAttribute="top" secondItem="43m-7l-zMa" secondAttribute="top" id="VMV-Sl-CKp"/>
+                                                <constraint firstItem="1fS-cd-1GY" firstAttribute="top" secondItem="43m-7l-zMa" secondAttribute="top" constant="8" id="Wu2-f7-epR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Beq-ca-Bxj" secondAttribute="bottom" constant="8" id="cb7-up-TON"/>
+                                                <constraint firstItem="1fS-cd-1GY" firstAttribute="leading" secondItem="qCV-fN-pTW" secondAttribute="trailing" constant="8" id="m3k-2c-ht3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="IXo-Q5-xi2" id="DfE-Zp-9Np"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="vB5-d8-Njv">
+                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <segments>
+                                    <segment title="Tracked Expertises"/>
+                                    <segment title="Mastery"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="kcd-kW-mT8"/>
                     </view>
+                    <connections>
+                        <outlet property="criteriaTable" destination="gRC-VC-7wB" id="ENH-Cp-7rc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnM-4f-VA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400" y="-99"/>
+            <point key="canvasLocation" x="1398.5507246376812" y="-99.456521739130437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G27-yD-Pl3">

@@ -11,12 +11,16 @@ import UIKit
 class ExpertiseTableViewController: UITableViewController {
     var skillNum: Int? = 0
     var subskillNum: Int? = 0
-    var expertises: [Expertise] = []// = FakeDatabase().database[0].subskills[0].expertises
+    var expertises: [Expertise] = []
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        performSegue(withIdentifier: "ShowExpertiseCriteriaSegue", sender: cell)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
-        expertises = Expertise.getExpertisesForSubskill(num: subskillNum!)//FakeDatabase().database[skillNum!].subskills[subskillNum!].expertises
+        expertises = Expertise.getExpertisesForSubskill(num: subskillNum!)//
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,12 +37,10 @@ class ExpertiseTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return expertises.count
     }
 
@@ -96,14 +98,21 @@ class ExpertiseTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let destinationViewController = segue.destination as? ExpertiseCriteriaViewController {
+            destinationViewController.expertiseNum = self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row
+            destinationViewController.subskillNum = subskillNum
+            destinationViewController.skillNum = skillNum
+        }
+ 
     }
-    */
+ 
 
 }

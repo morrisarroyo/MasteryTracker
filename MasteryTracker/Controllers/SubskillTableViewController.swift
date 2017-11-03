@@ -10,7 +10,7 @@ import UIKit
 
 class SubskillTableViewController: UITableViewController {
     var data: Int? = 0
-    var subskills: [Subskill] = [] // FakeDatabase().database[0].subskills
+    var subskills: [Subskill] = []
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
@@ -20,10 +20,7 @@ class SubskillTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Subskill.listSubskillsRows()
-        /*
-         self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
-         */
-        subskills = Subskill.getSubskillsForSkill(num:data!)// FakeDatabase().database[data!].subskills
+        subskills = Subskill.getSubskillsForSkill(num:data!)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

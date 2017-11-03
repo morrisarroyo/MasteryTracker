@@ -10,6 +10,7 @@ import UIKit
 
 class TrackedExpertiseTableViewController: UITableViewController {
     //MARK: Properties
+    @IBOutlet weak var trackedToggle: UISegmentedControl!
     var expertises = [Expertise]()
     
     //MARK: Private Methods
@@ -74,6 +75,10 @@ class TrackedExpertiseTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true);
+        trackedToggle.selectedSegmentIndex = 0
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
