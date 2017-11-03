@@ -10,7 +10,7 @@ import UIKit
 
 class SkillTableViewController: UITableViewController {
 
-    var skills: [Skill] = FakeDatabase().database
+    var skills: [Skill] = Skill.getSkillsForMastery()//FakeDatabase().database
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
@@ -18,7 +18,9 @@ class SkillTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
+        Skill.listSkillsRows()
+        /*self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
+         */
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

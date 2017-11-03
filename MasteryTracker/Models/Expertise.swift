@@ -11,7 +11,7 @@ import SQLite
 class Expertise {
     
     //MARK: Properties
-    let tableName: String = "expertises"
+    static let tableName: String = "expertises"
     var id: Int
     var name: String
     var rating: Int
@@ -38,7 +38,7 @@ class Expertise {
         self.subskillId = subskillId
     }
     
-    static func listExpertisesRows() {
+    static func getExpertisesForSubskill(num : Int) -> [Expertise]{
         let id = Expression<Int>("id")
         let name = Expression<String>("name")
         let rating = Expression<Int>("rating")
@@ -47,14 +47,35 @@ class Expertise {
         
         let db = Database().db
         let expertisesTable = Table("expertises")
+        var expertises = [Expertise]()
+        let query = expertisesTable.filter(subskillId == num)
+        do {
+            for expertise in try db.prepare(query) {
+                let exp = Expertise(id: try expertise.get(id),  name: try expertise.get(name), rating: try expertise.get(rating), tracked: try expertise.get(tracked), subskillId: try expertise.get(subskillId))
+                expertises.append(exp!)
+            }
+        } catch {
+            print("Failed to get list of expertises from database");
+        }
+        return expertises
+    }
+    
+    static func listExpertisesRows() {
+        let id = Expression<Int>("id")
+        let name = Expression<String>("name")
+        //let rating = Expression<Int>("rating")
+        let tracked = Expression<Bool>("tracked")
+        //let subskillId = Expression<Int>("subskillId")
+        
+        let db = Database().db
+        let expertisesTable = Table(tableName)
         do {
             for expertise in try db.prepare(expertisesTable) {
                 print((try expertise.get(name)) + String(try expertise.get(id)) + String(try expertise.get(tracked)))
             }
         } catch {
-            fatalError("Failed to get list of expertises from database");
-        }
-        
+            print("Failed to get list of expertises from database");
+        }        
     }
     
     static func getTrackedExpertises() -> [Expertise]{
@@ -63,8 +84,6 @@ class Expertise {
         let rating = Expression<Int>("rating")
         let tracked = Expression<Bool>("tracked")
         let subskillId = Expression<Int>("subskillId")
-        
-        
         let db = Database().db
         let expertisesTable = Table("expertises")
         var expertises = [Expertise]()
@@ -75,7 +94,7 @@ class Expertise {
                     expertises.append(exp!)
             }
         } catch {
-            fatalError("Failed to get instance of Expertise from database");
+            print("Failed to get instance of Expertise from database");
         }
         
         return expertises

@@ -68,7 +68,7 @@ class Database {
         
         
         do {
-            try db.run(expertises.insert(or: .replace, name <- "Facial Structure", rating <- 2, tracked <- true, subskillId <- 0))
+            try db.run(expertises.insert(or: .replace, name <- "Mango", rating <- 2, tracked <- true, subskillId <- 0))
             try db.run(expertises.insert(or: .replace, name <- "Facial Muscles", rating <- 1, tracked <- true, subskillId <- 0))
             try db.run(expertises.insert(or: .replace, name <- "Torso Structure", rating <- 1, tracked <- true, subskillId <- 1))
             try db.run(expertises.insert(or: .replace, name <- "Torso Muscles", rating <- 2, tracked <- false, subskillId <- 1))

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t9o-IU-EV0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZO9-A3-Ozh">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,10 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tracked Expertise Table View Controller-->
+        <!--Mastery Tracker-->
         <scene sceneID="h35-XQ-FLF">
             <objects>
                 <tableViewController id="t9o-IU-EV0" customClass="TrackedExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,15 +86,16 @@
                             <outlet property="delegate" destination="t9o-IU-EV0" id="eBr-M2-aML"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Mastery Tracker" id="woj-eU-4Wj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O6-Wz-duY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1790" y="-99"/>
+            <point key="canvasLocation" x="-1530" y="-99"/>
         </scene>
-        <!--Skill Table View Controller-->
+        <!--Skills-->
         <scene sceneID="aqL-vf-3zO">
             <objects>
-                <tableViewController id="kdD-iX-n3v" customClass="SkillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Skills" id="kdD-iX-n3v" customClass="SkillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dbI-kB-vCJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +108,7 @@
                                 <segment title="Mastery"/>
                             </segments>
                             <connections>
-                                <segue destination="t9o-IU-EV0" kind="show" identifier="" id="YYm-bl-BfP"/>
+                                <segue destination="ZO9-A3-Ozh" kind="show" identifier="" id="YYm-bl-BfP"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -164,12 +166,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TD-KC-4di" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-898" y="-100"/>
+            <point key="canvasLocation" x="-780" y="-99"/>
         </scene>
-        <!--SubskillTableViewController-->
+        <!--Subskills-->
         <scene sceneID="xnq-TZ-r4h">
             <objects>
-                <tableViewController title="SubskillTableViewController" id="Ltd-QF-8I3" customClass="SubskillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Subskills" id="Ltd-QF-8I3" customClass="SubskillTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ldr-Bw-iLt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,7 +184,7 @@
                                 <segment title="Mastery"/>
                             </segments>
                             <connections>
-                                <segue destination="t9o-IU-EV0" kind="show" id="BhX-GD-q0r"/>
+                                <segue destination="ZO9-A3-Ozh" kind="show" id="BhX-GD-q0r"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -238,12 +240,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMm-bJ-PIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-167" y="-99"/>
+            <point key="canvasLocation" x="-29" y="-99"/>
         </scene>
-        <!--ExpertiseTableViewController-->
+        <!--Expertises-->
         <scene sceneID="DZH-22-XYO">
             <objects>
-                <tableViewController title="ExpertiseTableViewController" id="2wz-Vy-A8w" customClass="ExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Expertises" id="2wz-Vy-A8w" customClass="ExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D64-aI-jbi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +258,7 @@
                                 <segment title="Mastery"/>
                             </segments>
                             <connections>
-                                <segue destination="t9o-IU-EV0" kind="show" id="54H-sB-NXF"/>
+                                <segue destination="ZO9-A3-Ozh" kind="show" id="54H-sB-NXF"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -287,6 +289,9 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <segue destination="c1x-Ht-6Zx" kind="show" id="bkj-DI-hml"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -316,10 +321,43 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k0-j6-rTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="-99"/>
+            <point key="canvasLocation" x="697" y="-99"/>
+        </scene>
+        <!--Criteria-->
+        <scene sceneID="L0e-DD-CAQ">
+            <objects>
+                <viewController title="Criteria" id="c1x-Ht-6Zx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IXo-Q5-xi2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="kcd-kW-mT8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RnM-4f-VA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1400" y="-99"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G27-yD-Pl3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZO9-A3-Ozh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSP-Yz-gE1">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t9o-IU-EV0" kind="relationship" relationship="rootViewController" id="Zxj-wG-M7A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rt5-r6-Tbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2278" y="-99"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BhX-GD-q0r"/>
+        <segue reference="54H-sB-NXF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import SQLite
 
 class Skill {
-    let tableName: String = "skills"
+    static let tableName: String = "skills"
     var id: Int
     var name : String
     var rating : Int
-    var subskills : [Subskill]
     var masteryId : Int = 1
     
     //Mark Initialization
-    init?(id: Int, name: String, rating: Int, subskills : [Subskill]) {
+    init?(id: Int, name: String, rating: Int, masteryId : Int = 1) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -32,6 +32,43 @@ class Skill {
         self.id = id
         self.name = name
         self.rating = rating
-        self.subskills = subskills
+    }
+    
+    static func getSkillsForMastery(num : Int = 1) -> [Skill]{
+        let id = Expression<Int>("id")
+        let name = Expression<String>("name")
+        let rating = Expression<Int>("rating")
+        let masteryId = Expression<Int>("masteryId")
+        
+        let db = Database().db
+        let skillsTable = Table(tableName)
+        var skills = [Skill]()
+        let query = skillsTable.filter(masteryId == num)
+        do {
+            for skill in try db.prepare(query) {
+                let ski = Skill(id: try skill.get(id),  name: try skill.get(name), rating: try skill.get(rating), masteryId: try skill.get(masteryId))
+                skills.append(ski!)
+            }
+        } catch {
+            print("Failed to get list of skills from database");
+        }
+        return skills
+    }
+    
+    static func listSkillsRows() {
+        let id = Expression<Int>("id")
+        let name = Expression<String>("name")
+        //let rating = Expression<Int>("rating")
+        let masteryId = Expression<Int>("masteryId")
+        
+        let db = Database().db
+        let skillsTable = Table(tableName)
+        do {
+            for skill in try db.prepare(skillsTable) {
+                print((try skill.get(name)) + String(try skill.get(id)) + String(try skill.get(masteryId)))
+            }
+        } catch {
+            print("Failed to get list of skills from database");
+        }
     }
 }

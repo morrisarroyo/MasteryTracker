@@ -11,12 +11,13 @@ import UIKit
 class ExpertiseTableViewController: UITableViewController {
     var skillNum: Int? = 0
     var subskillNum: Int? = 0
-    var expertises: [Expertise] = FakeDatabase().database[0].subskills[0].expertises
+    var expertises: [Expertise] = []// = FakeDatabase().database[0].subskills[0].expertises
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
-        expertises = FakeDatabase().database[skillNum!].subskills[subskillNum!].expertises
+        //self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
+        expertises = Expertise.getExpertisesForSubskill(num: subskillNum!)//FakeDatabase().database[skillNum!].subskills[subskillNum!].expertises
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

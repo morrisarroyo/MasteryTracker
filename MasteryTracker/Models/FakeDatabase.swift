@@ -5,7 +5,7 @@
 //  Created by Morris Arroyo on 2017-10-20.
 //  Copyright © 2017 BCIT. All rights reserved.
 //
-
+/*
 import Foundation
 
 class FakeDatabase {
@@ -71,3 +71,4 @@ class FakeDatabase {
         //fatalError("The skill id, \(skillId), is not a valid skillId")
     }
 }
+*/
