@@ -13,20 +13,17 @@ class TrackedExpertiseTableViewController: UITableViewController {
     @IBOutlet weak var trackedToggle: UISegmentedControl!
     var expertises = [Expertise]()
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+        //print("Unwind to Root View Controller")
+    }
+    
     //MARK: Private Methods
     
     private func loadSampleExpertises() {
-        /*
-        guard let expertise1 = Expertise(id:8, name: "Facial Anatomy", rating: 2, tracked: false, subskillId:5) else {
-            fatalError("Unable to instantiate expertise1")
-        }
-        guard let expertise2 = Expertise(id:9, name: "Cross Hatching", rating: 3, tracked: false, subskillId: 6) else {
-            fatalError("Unable to instantiate expertise2")
-        }
-        guard let expertise3 = Expertise(id: 10, name: "Head 3/4 View ", rating: 1, tracked: false, subskillId: 7) else {
-            fatalError("Unable to instantiate expertise3")
-        }
-         */
         expertises = Expertise.getTrackedExpertises()
     }
     

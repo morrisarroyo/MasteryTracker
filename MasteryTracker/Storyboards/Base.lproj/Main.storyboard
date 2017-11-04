@@ -16,7 +16,7 @@
         <scene sceneID="h35-XQ-FLF">
             <objects>
                 <tableViewController id="t9o-IU-EV0" customClass="TrackedExpertiseTableViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="100" sectionFooterHeight="28" id="rtN-q6-LXR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" id="rtN-q6-LXR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,7 +33,7 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackedExpertiseTableViewCell" rowHeight="90" id="IFw-4h-vYz" customClass="TrackedExpertiseTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="130" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="58" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IFw-4h-vYz" id="lgx-td-jOO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
@@ -52,7 +52,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
                                             <rect key="frame" x="33" y="41" width="365" height="32.666666666666671"/>
                                             <gestureRecognizers/>
                                             <constraints>
@@ -111,7 +111,7 @@
                                 <segment title="Mastery"/>
                             </segments>
                             <connections>
-                                <segue destination="ZO9-A3-Ozh" kind="show" identifier="" id="YYm-bl-BfP"/>
+                                <segue destination="Rse-uM-6PZ" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="kfz-ff-s6p"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -168,6 +168,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TD-KC-4di" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rse-uM-6PZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-780" y="-99"/>
         </scene>
@@ -187,7 +188,7 @@
                                 <segment title="Mastery"/>
                             </segments>
                             <connections>
-                                <segue destination="ZO9-A3-Ozh" kind="show" id="BhX-GD-q0r"/>
+                                <segue destination="bZw-qZ-Pcs" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="iAm-IB-32i"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -244,6 +245,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMm-bJ-PIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bZw-qZ-Pcs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-29" y="-99"/>
         </scene>
@@ -263,7 +265,7 @@
                                 <segment title="Mastery"/>
                             </segments>
                             <connections>
-                                <segue destination="ZO9-A3-Ozh" kind="show" id="54H-sB-NXF"/>
+                                <segue destination="qYJ-BO-lgf" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="iYi-dj-yil"/>
                             </connections>
                         </segmentedControl>
                         <prototypes>
@@ -325,6 +327,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k0-j6-rTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qYJ-BO-lgf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="697" y="-99"/>
         </scene>
@@ -336,7 +339,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRC-VC-7wB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRC-VC-7wB">
                                 <rect key="frame" x="0.0" y="92" width="414" height="644"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -344,7 +347,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tFf-SA-2nK" id="43m-7l-zMa">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fS-cd-1GY" userLabel="criteriaNameLabel">
@@ -399,7 +402,7 @@
                                     <segment title="Mastery"/>
                                 </segments>
                                 <connections>
-                                    <segue destination="ZO9-A3-Ozh" kind="show" id="xxA-z2-kMe"/>
+                                    <segue destination="42N-y1-oSz" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="eKZ-He-v5p"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -420,6 +423,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnM-4f-VA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="42N-y1-oSz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1398.5507246376812" y="-99.456521739130437"/>
         </scene>
@@ -442,7 +446,4 @@
             <point key="canvasLocation" x="-2278" y="-99"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="xxA-z2-kMe"/>
-    </inferredMetricsTieBreakers>
 </document>

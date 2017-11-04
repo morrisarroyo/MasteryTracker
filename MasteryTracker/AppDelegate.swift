@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Utility.copyDatabase()
         let db : Database = Database()
         db.createTables()
-        Expertise.listExpertisesRows()
         return true
     }
 

@@ -9,6 +9,7 @@
 import UIKit
 
 class SubskillTableViewController: UITableViewController {
+    
     var data: Int? = 0
     var subskills: [Subskill] = []
     
@@ -19,7 +20,7 @@ class SubskillTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Subskill.listSubskillsRows()
+        //Subskill.listSubskillsRows()
         subskills = Subskill.getSubskillsForSkill(num:data!)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

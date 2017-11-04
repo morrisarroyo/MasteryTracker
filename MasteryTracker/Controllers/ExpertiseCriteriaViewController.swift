@@ -10,7 +10,9 @@ import UIKit
 
 class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        
+    }
     
     
     @IBOutlet weak var criteriaTable: UITableView!
@@ -22,7 +24,7 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
     var criteriaCell:  CriteriaTableViewCell = CriteriaTableViewCell()
     override func viewDidLoad() {
         super.viewDidLoad()
-        Criteria.listCriteriasRows()
+        //Criteria.listCriteriasRows()
         criterias = Criteria.getCriteriaForType(type:  CriteriaType.expertise)
         criteriaTable.dataSource = self
         criteriaTable.delegate = self
@@ -36,15 +38,13 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = criteriaTable.dequeueReusableCell(withIdentifier: "RatingDescription", for: indexPath)
-        //cell.subviews[0].
+       
         let cellIdentifier = "RatingDescription"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CriteriaTableViewCell  else {
             fatalError("The dequeued cell is not an instance of CriteriaTableViewCell.")
         }
         
         let criteria = criterias[indexPath.row]
-        print(criterias.count)
         
         cell.criteriaRatingLabel?.text = criteria.rating.description
         cell.criteriaNameLabel?.text = criteria.name

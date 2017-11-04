@@ -84,7 +84,6 @@ class Criteria: NSObject {
         } catch {
             print("Failed to get list of criterias from database");
         }
-        print(criterias.count)
         return criterias
     }
 }

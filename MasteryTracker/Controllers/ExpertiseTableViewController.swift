@@ -9,6 +9,7 @@
 import UIKit
 
 class ExpertiseTableViewController: UITableViewController {
+    
     var skillNum: Int? = 0
     var subskillNum: Int? = 0
     var expertises: [Expertise] = []
