@@ -26,8 +26,6 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
         criterias = Criteria.getCriteriaForType(type:  CriteriaType.expertise)
         criteriaTable.dataSource = self
         criteriaTable.delegate = self
-        let cellIdentifier = "RatingDescription"
-        criteriaTable.register(CriteriaTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         // Do any additional setup after loading the view.
     }
 
@@ -48,9 +46,9 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
         let criteria = criterias[indexPath.row]
         print(criterias.count)
         
-        cell.criteriaRatingLabel?.text = "Food"//criteria.rating.description
-        cell.criteriaNameLabel?.text = "Banana"//criteria.name
-        cell.criteriaDescriptionLabel?.text = "Ketchup"//criteria.desc
+        cell.criteriaRatingLabel?.text = criteria.rating.description
+        cell.criteriaNameLabel?.text = criteria.name
+        cell.criteriaDescriptionLabel?.text = criteria.desc
         
         return cell
     }

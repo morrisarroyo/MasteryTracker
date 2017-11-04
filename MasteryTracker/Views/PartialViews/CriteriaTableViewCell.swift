@@ -16,7 +16,6 @@ class CriteriaTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        print("hi")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

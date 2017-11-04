@@ -140,9 +140,9 @@ class Database {
         let desc4 = "Extensive practice and glances reference"
         let desc5 = "Complete understanding of this"
         
-        let type0 = "Mastery"
-        let type1 = "Skill"
-        let type2 = "Subskill"
+        //let type0 = "Mastery"
+        //let type1 = "Skill"
+        //let type2 = "Subskill"
         let type3 = "Expertise"
         //let desc5Ex = "More than 20hrs of practice for this Expertise"
         do {
