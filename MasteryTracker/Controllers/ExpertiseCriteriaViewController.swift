@@ -8,21 +8,26 @@
 
 import UIKit
 
-class ExpertiseCriteriaViewController: UITableViewController {
+class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    
     @IBOutlet weak var criteriaTable: UITableView!
     
     var skillNum: Int?
     var subskillNum: Int?
     var expertiseNum: Int?
     var criterias: [Criteria] = []
-    
+    var criteriaCell:  CriteriaTableViewCell = CriteriaTableViewCell()
     override func viewDidLoad() {
         super.viewDidLoad()
+        Criteria.listCriteriasRows()
         criterias = Criteria.getCriteriaForType(type:  CriteriaType.expertise)
         criteriaTable.dataSource = self
         criteriaTable.delegate = self
-        criteriaTable.register(UITableViewCell.self, forCellReuseIdentifier:"RatingDescription")
-        //Criteria.listCriteriasRows()
+        let cellIdentifier = "RatingDescription"
+        criteriaTable.register(CriteriaTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         // Do any additional setup after loading the view.
     }
 
@@ -30,9 +35,34 @@ class ExpertiseCriteriaViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = criteriaTable.dequeueReusableCell(withIdentifier: "RatingDescription", for: indexPath)
+        //cell.subviews[0].
+        let cellIdentifier = "RatingDescription"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CriteriaTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of CriteriaTableViewCell.")
+        }
+        
+        let criteria = criterias[indexPath.row]
+        print(criterias.count)
+        
+        cell.criteriaRatingLabel?.text = "Food"//criteria.rating.description
+        cell.criteriaNameLabel?.text = "Banana"//criteria.name
+        cell.criteriaDescriptionLabel?.text = "Ketchup"//criteria.desc
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return criterias.count
+    }
+    
+    /*
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //let cell = criteriaTable.dequeueReusableCell(withIdentifier: "RatingDescription", for: indexPath)
+        //cell.subviews[0].
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,7 +70,7 @@ class ExpertiseCriteriaViewController: UITableViewController {
         //cell.subviews[0].
         return cell
     }
-    
+    */
     /*
     // MARK: - Navigation
 

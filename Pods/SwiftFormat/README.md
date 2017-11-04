@@ -1,7 +1,8 @@
 [![Travis](https://img.shields.io/travis/nicklockwood/SwiftFormat.svg)](https://travis-ci.org/nicklockwood/SwiftFormat)
-[![Swift](https://img.shields.io/badge/swift-3.1-yellow.svg?style=flat)](https://developer.apple.com/swift)
-[![Swift](https://img.shields.io/badge/swift-3.2-orange.svg?style=flat)](https://developer.apple.com/swift)
-[![Swift](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
+[![Coveralls](https://coveralls.io/repos/github/nicklockwood/SwiftFormat/badge.svg)](https://coveralls.io/github/nicklockwood/SwiftFormat)
+[![Swift 3.1](https://img.shields.io/badge/swift-3.1-yellow.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 3.2](https://img.shields.io/badge/swift-3.2-orange.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 4.0](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
 [![License](https://img.shields.io/badge/license-zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)
 [![Twitter](https://img.shields.io/badge/twitter-@nicklockwood-blue.svg)](http://twitter.com/nicklockwood)
 
@@ -302,7 +303,7 @@ Here are all the rules that SwiftFormat currently applies, and the effect that t
 + let foo = 5
 ```
 
-***elseOnSameLine*** - controls whether an `else`, `catch` or `while` after a `}` appears on the same line:
+***elseOnSameLine*** - controls whether an `else`, `catch` or `while` keyword after a `}` appears on the same line, depending on the `--elseposition` option:
 
 ```diff
   if x {
@@ -373,7 +374,7 @@ Here are all the rules that SwiftFormat currently applies, and the effect that t
   }
 ```
 
-***indent*** - adjusts leading whitespace based on scope and line wrapping. Uses either tabs or spaces, depending on the `--indent` option. May also affects comments and `#if ...` statements, depending on the configuration of the `--comments` and `--ifdef` options:
+***indent*** - adjusts leading whitespace based on scope and line wrapping. Uses either tabs or spaces, depending on the `--indent` option. By default, `case` statements will be indented level with their containing `switch`, but this can be controlled with the `--indentcase` options. Also affects comments and `#if ...` statements, depending on the configuration of the `--comments` and `--ifdef` options:
 
 ```diff
   if x {
@@ -401,6 +402,18 @@ Here are all the rules that SwiftFormat currently applies, and the effect that t
 +   bar,
 +   baz
 + ]
+```
+
+```diff
+  switch foo {
+-   case bar: break
+-   case baz: break
+  }
+
+  switch foo {
++ case bar: break
++ case baz: break
+  }
 ```
 
 ***linebreakAtEndOfFile*** - ensures that the last line of the file is empty.
@@ -633,7 +646,7 @@ goto(fail)
 + Foo<Bar>()
 ```
 
-***spaceAroundOperators*** - contextually adjusts the space around infix operators:
+***spaceAroundOperators*** - contextually adjusts the space around infix operators. Also adds or removes the space between an oeprator function declaration and its arguments, depending on value of the `--operatorfunc` option.
 
 ```diff
 - foo . bar()
@@ -643,6 +656,11 @@ goto(fail)
 ```diff
 - a+b+c
 + a + b + c
+```
+
+```diff
+- func ==(lhs: Int, rhs: Int) -> Bool
++ func == (lhs: Int, rhs: Int) -> Bool
 ```
 
 ***spaceAroundParens*** - contextually adjusts the space around ( ). For example:
@@ -849,7 +867,7 @@ There haven't been many questions yet, but here's what I'd like to think people 
 
 *Q. What versions of Swift are supported?*
 
-> A. The framework requires Swift 3, but it can format programs written in Swift 2.x or 3.x. Swift 2.x is no longer actively supported however, and newer rules may not work correctly with Swift 2.x. If you find that SwiftFormat breaks your 2.x codebase, the best solution is probably to revert to an earlier SwiftFormat release, or enable only a subset of rules.
+> A. The framework compiles on Swift 3.x or 4.x, but it can format programs written in Swift 2.x, 3.x or 4.x. Swift 2.x is no longer actively supported however, and newer rules may not work correctly with Swift 2.x. If you find that SwiftFormat breaks your 2.x codebase, the best solution is probably to revert to an earlier SwiftFormat release, or enable only a subset of rules.
 
 
 *Q. I don't like how SwiftFormat formatted my code*

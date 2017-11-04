@@ -10,9 +10,13 @@ import UIKit
 
 class CriteriaTableViewCell: UITableViewCell {
    
+    @IBOutlet weak var criteriaNameLabel: UILabel!
+    @IBOutlet weak var criteriaRatingLabel: UILabel!
+    @IBOutlet weak var criteriaDescriptionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        print("hi")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

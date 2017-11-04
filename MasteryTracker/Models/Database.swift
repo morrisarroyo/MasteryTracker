@@ -121,6 +121,7 @@ class Database {
                 t.column(name)
                 t.column(description)
                 t.column(typeId)
+                t.unique(rating, typeId)
             })
         } catch {
             print("Could not create criterias table")

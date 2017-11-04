@@ -37,7 +37,7 @@ class Criteria: NSObject {
         }
         
         // The rating must be between 0 and 5 inclusively
-        guard (rating >= 0) && (rating <= 3) else {
+        guard (typeId >= 0) && (typeId <= 3) else {
             return nil
         }
         
@@ -84,6 +84,7 @@ class Criteria: NSObject {
         } catch {
             print("Failed to get list of criterias from database");
         }
+        print(criterias.count)
         return criterias
     }
 }

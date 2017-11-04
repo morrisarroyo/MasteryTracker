@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -53,7 +53,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
-                                            <rect key="frame" x="33" y="38.666666666666671" width="365" height="35.000000000000014"/>
+                                            <rect key="frame" x="33" y="38.666666666666664" width="365" height="34.999999999999993"/>
                                             <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="wmk-GV-jOc"/>
@@ -341,31 +341,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingDescription" rowHeight="90" id="tFf-SA-2nK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingDescription" rowHeight="90" id="tFf-SA-2nK" customClass="CriteriaTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tFf-SA-2nK" id="43m-7l-zMa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fS-cd-1GY" userLabel="criteriaName">
-                                                    <rect key="frame" x="46" y="7.9999999999999982" width="360" height="20.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fS-cd-1GY" userLabel="criteriaNameLabel">
+                                                    <rect key="frame" x="335.33333333333326" y="15.999999999999998" width="70.666666666666686" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCV-fN-pTW" userLabel="criteriaRating">
-                                                    <rect key="frame" x="8" y="0.0" width="30" height="89.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCV-fN-pTW" userLabel="criteriaRatingLabel">
+                                                    <rect key="frame" x="8" y="0.0" width="319.33333333333331" height="89.666666666666671"/>
                                                     <gestureRecognizers/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="aoA-NH-n7l"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beq-ca-Bxj" userLabel="criteriaDescription">
-                                                    <rect key="frame" x="46" y="55.666666666666671" width="368" height="18.000000000000014"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beq-ca-Bxj" userLabel="criteriaDescriptionLabel">
+                                                    <rect key="frame" x="335.33333333333326" y="55.666666666666657" width="78.666666666666686" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="yTh-XG-SRK"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -375,14 +375,21 @@
                                                 <constraint firstAttribute="bottom" secondItem="qCV-fN-pTW" secondAttribute="bottom" id="2zw-Ww-IRc"/>
                                                 <constraint firstItem="Beq-ca-Bxj" firstAttribute="leading" secondItem="qCV-fN-pTW" secondAttribute="trailing" constant="8" id="6Zr-aB-yg9"/>
                                                 <constraint firstAttribute="trailing" secondItem="1fS-cd-1GY" secondAttribute="trailing" constant="8" id="6mr-53-2LX"/>
-                                                <constraint firstItem="Beq-ca-Bxj" firstAttribute="trailing" secondItem="43m-7l-zMa" secondAttribute="trailingMargin" constant="8" id="7V2-px-2t6"/>
-                                                <constraint firstItem="qCV-fN-pTW" firstAttribute="leading" secondItem="43m-7l-zMa" secondAttribute="leading" constant="8" id="Uba-Tt-FUK"/>
+                                                <constraint firstItem="Beq-ca-Bxj" firstAttribute="trailing" secondItem="43m-7l-zMa" secondAttribute="trailing" constant="-5.6843418860808015e-14" id="7V2-px-2t6"/>
+                                                <constraint firstItem="qCV-fN-pTW" firstAttribute="centerX" secondItem="43m-7l-zMa" secondAttribute="leading" constant="8" id="Uba-Tt-FUK"/>
                                                 <constraint firstItem="qCV-fN-pTW" firstAttribute="top" secondItem="43m-7l-zMa" secondAttribute="top" id="VMV-Sl-CKp"/>
-                                                <constraint firstItem="1fS-cd-1GY" firstAttribute="top" secondItem="43m-7l-zMa" secondAttribute="top" constant="8" id="Wu2-f7-epR"/>
+                                                <constraint firstItem="1fS-cd-1GY" firstAttribute="top" secondItem="43m-7l-zMa" secondAttribute="topMargin" constant="8" id="Wu2-f7-epR"/>
+                                                <constraint firstItem="Beq-ca-Bxj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1fS-cd-1GY" secondAttribute="bottom" constant="5" id="bbR-sD-pfA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Beq-ca-Bxj" secondAttribute="bottom" constant="8" id="cb7-up-TON"/>
                                                 <constraint firstItem="1fS-cd-1GY" firstAttribute="leading" secondItem="qCV-fN-pTW" secondAttribute="trailing" constant="8" id="m3k-2c-ht3"/>
+                                                <constraint firstItem="qCV-fN-pTW" firstAttribute="centerY" secondItem="43m-7l-zMa" secondAttribute="centerY" id="mjm-BZ-Fty"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="criteriaDescriptionLabel" destination="Beq-ca-Bxj" id="fV7-hU-8vd"/>
+                                            <outlet property="criteriaNameLabel" destination="1fS-cd-1GY" id="PrR-9p-pYh"/>
+                                            <outlet property="criteriaRatingLabel" destination="qCV-fN-pTW" id="Shn-UY-rYd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
