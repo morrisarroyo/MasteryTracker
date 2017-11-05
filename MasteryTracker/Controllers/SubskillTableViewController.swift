@@ -64,6 +64,7 @@ class SubskillTableViewController: UITableViewController {
         
         cell.nameLabel.text = subskill.name
         cell.ratingLabel.text = subskill.rating.description
+        cell.id = subskill.id
         // Configure the cell...
 
         return cell
@@ -113,7 +114,7 @@ class SubskillTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let destinationViewController = segue.destination as? ExpertiseTableViewController {
-            destinationViewController.subskillNum = self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row
+            destinationViewController.subskillNum = (sender as! EntryTableViewCell).id
             destinationViewController.skillNum = data
         }
     }

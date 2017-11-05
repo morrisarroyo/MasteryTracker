@@ -64,6 +64,7 @@ class SkillTableViewController: UITableViewController {
         
         cell.nameLabel.text = skill.name
         cell.ratingLabel.text = skill.rating.description
+        cell.id = skill.id
         // Configure the cell...
 
         return cell
@@ -114,7 +115,7 @@ class SkillTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if let destinationViewController = segue.destination as? SubskillTableViewController {
-            destinationViewController.data = self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row
+            destinationViewController.data = (sender as! EntryTableViewCell).id
         }
     }
     

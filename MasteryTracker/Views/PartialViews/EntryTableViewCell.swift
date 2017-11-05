@@ -12,6 +12,7 @@ class EntryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var ratingLabel: UITextField!
+    var id: Int!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

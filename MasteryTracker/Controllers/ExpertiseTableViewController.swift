@@ -63,6 +63,7 @@ class ExpertiseTableViewController: UITableViewController {
         
         cell.nameLabel.text = expertise.name
         cell.ratingLabel.text = expertise.rating.description
+        cell.id = expertise.id
         // Configure the cell...
 
         return cell
@@ -114,10 +115,10 @@ class ExpertiseTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if let destinationViewController = segue.destination as? ExpertiseCriteriaViewController {
-            destinationViewController.expertiseNum = self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row
+            destinationViewController.expertiseNum = (sender as! EntryTableViewCell).id
             destinationViewController.subskillNum = subskillNum
             destinationViewController.skillNum = skillNum
-            destinationViewController.expertise = expertises[destinationViewController.expertiseNum!]
+            destinationViewController.expertise = expertises[self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row]
         }
  
     }

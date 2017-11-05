@@ -13,6 +13,10 @@ class Subskill: NSObject {
 
     //MARK: Properties
     static let tableName: String = "subskills"
+    static let tcId = Expression<Int>("id")
+    static let tcName = Expression<String>("name")
+    static let tcRating = Expression<Int>("rating")
+    static let tcSkillId = Expression<Int>("skillId")
     var id: Int
     var name: String
     var rating: Int
@@ -37,6 +41,22 @@ class Subskill: NSObject {
         self.skillId = skillId
     }
     
+    static func getSubskillForId(id: Int) -> Subskill {
+        let db = Database().db
+        
+        let skillsTable = Table(tableName)
+        let query = skillsTable.filter(tcId == id)
+        var subskill: Subskill?
+        do {
+            if let ssk = try db.pluck(query) {
+                subskill = Subskill(id: try ssk.get(tcId),  name: try ssk.get(tcName), rating: try ssk.get(tcRating), skillId: try ssk.get(tcSkillId))
+            }
+            return subskill!
+        } catch {
+            print("Failed to get list of skills from database");
+        }
+        return subskill!
+    }
     
     static func getSubskillsForSkill(num : Int) -> [Subskill]{
         let id = Expression<Int>("id")

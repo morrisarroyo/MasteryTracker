@@ -34,6 +34,27 @@ class Skill {
         self.rating = rating
     }
     
+    static func getSkillForId(num: Int) -> Skill {
+        let db = Database().db
+        let id = Expression<Int>("id")
+        let name = Expression<String>("name")
+        let rating = Expression<Int>("rating")
+        let masteryId = Expression<Int>("masteryId")
+        
+        let skillsTable = Table(tableName)
+        let query = skillsTable.filter(id == num)
+        var ski: Skill?
+        do {
+            if let skill = try db.pluck(query) {
+                ski = Skill(id: try skill.get(id),  name: try skill.get(name), rating: try skill.get(rating), masteryId: try skill.get(masteryId))
+            }
+            return ski!
+        } catch {
+            print("Failed to get list of skills from database");
+        }
+        return ski!
+    }
+    
     static func getSkillsForMastery(num : Int = 1) -> [Skill]{
         let id = Expression<Int>("id")
         let name = Expression<String>("name")
