@@ -19,7 +19,7 @@ class TrackedExpertiseTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    private func loadSampleExpertises() {
+    private func loadExpertises() {
         expertises = Expertise.getTrackedExpertises()
     }
     
@@ -59,7 +59,7 @@ class TrackedExpertiseTableViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
          */
         // Load Sample Data
-        loadSampleExpertises()
+        loadExpertises()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -71,6 +71,8 @@ class TrackedExpertiseTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         trackedToggle.selectedSegmentIndex = 0
+        loadExpertises()
+        self.tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

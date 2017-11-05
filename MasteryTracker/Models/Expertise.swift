@@ -12,6 +12,9 @@ class Expertise {
     
     //MARK: Properties
     static let tableName: String = "expertises"
+   
+    static let minRating: Int = 0
+    static let maxRating: Int = 5
     var id: Int
     var name: String
     var rating: Int
@@ -27,7 +30,7 @@ class Expertise {
         }
         
         // The rating must be between 0 and 5 inclusively
-        guard (rating >= 0) && (rating <= 5) else {
+        guard (rating >= Expertise.minRating) && (rating <= Expertise.maxRating) else {
             return nil
         }
         
@@ -38,6 +41,64 @@ class Expertise {
         self.subskillId = subskillId
     }
     
+    func toggleTracked() -> Bool {
+        let db = Database().db
+        let dbId = Expression<Int>("id")
+        let dbTracked = Expression<Bool>("tracked")
+        let expertisesTable = Table(Expertise.tableName)
+        let expertise = expertisesTable.filter(dbId == id)
+        do {
+            if(try db.run(expertise.update(dbTracked <- !tracked)) > 0) {
+                tracked = !tracked
+            }
+        } catch {
+            print("failed to increment expertise rating")
+        }
+        return tracked
+    }
+    
+    func incrementRating() -> Int {
+        let temp = rating + 1;
+        if(validateRating(rating: temp)) {
+            let dbId = Expression<Int>("id")
+            let dbRating = Expression<Int>("rating")
+            let db = Database().db
+            let expertisesTable = Table(Expertise.tableName)
+            let expertise = expertisesTable.filter(dbId == id)
+            do {
+                if(try db.run(expertise.update(dbRating <- temp)) > 0) {
+                    rating = temp
+                }
+            } catch {
+                print("failed to increment expertise rating")
+            }
+        }
+        return rating
+    }
+    
+    func decrementRating() -> Int {
+        let temp = rating - 1;
+        if(validateRating(rating: temp)) {
+            let dbId = Expression<Int>("id")
+            let dbRating = Expression<Int>("rating")
+            let db = Database().db
+            let expertisesTable = Table(Expertise.tableName)
+            let expertise = expertisesTable.filter(dbId == id)
+            do {
+                if(try db.run(expertise.update(dbRating <- temp)) > 0) {
+                    rating = temp
+                }
+                print(rating)
+            } catch {
+                print("failed to increment expertise rating")
+            }
+        }
+        return rating
+    }
+    
+    func validateRating(rating: Int) -> Bool {
+        return (rating >= Expertise.minRating && rating <= Expertise.maxRating)
+    }
     static func getExpertisesForSubskill(num : Int) -> [Expertise]{
         let id = Expression<Int>("id")
         let name = Expression<String>("name")
@@ -46,7 +107,7 @@ class Expertise {
         let subskillId = Expression<Int>("subskillId")
         
         let db = Database().db
-        let expertisesTable = Table("expertises")
+        let expertisesTable = Table(tableName)
         var expertises = [Expertise]()
         let query = expertisesTable.filter(subskillId == num)
         do {

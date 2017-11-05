@@ -16,6 +16,7 @@ class SkillTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         performSegue(withIdentifier: "ShowSubskillsSegue", sender: cell)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Skill.listSkillsRows()
@@ -28,6 +29,11 @@ class SkillTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true);
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

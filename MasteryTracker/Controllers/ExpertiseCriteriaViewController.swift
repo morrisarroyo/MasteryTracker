@@ -15,13 +15,15 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var ratingName: UILabel!
     @IBOutlet weak var trackingImage: UIImageView!
     @IBOutlet weak var expertiseName: UILabel!
+    @IBOutlet weak var previousImage: UIImageView!
+    @IBOutlet weak var nextImage: UIImageView!
     
     var skillNum: Int?
     var subskillNum: Int?
     var expertiseNum: Int?
     var expertise: Expertise?
-    var criterias: [Criteria] = []
-    var criteriaCell:  CriteriaTableViewCell = CriteriaTableViewCell()
+    var criterias: [Criteria] = [Criteria]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Criteria.listCriteriasRows()
@@ -32,11 +34,36 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
         criteriaTable.delegate = self
         ratingNumber.text = expertise!.rating.description
         ratingName.text = criterias[expertise!.rating].name
-        trackingImage.image = #imageLiteral(resourceName: "checkboxBlank")
         expertiseName.text = expertise!.name
-        // Do any additional setup after loading the view.
+        setTrackedImage(tracked: expertise!.tracked)
     }
 
+    @IBAction func changeRating(sender: UITapGestureRecognizer) {
+        var rating: Int
+        if(sender.view == previousImage) {
+            rating = expertise!.decrementRating()
+            ratingNumber.text = rating.description
+            ratingName.text = criterias[rating].name
+        } else if (sender.view == nextImage) {
+            rating = expertise!.incrementRating()
+            ratingNumber.text = rating.description
+            ratingName.text = criterias[rating].name
+        }
+    }
+    
+    @IBAction func toggleTracked(sender: UITapGestureRecognizer) {
+        print("toggle")
+        setTrackedImage(tracked: expertise!.toggleTracked())
+    }
+    
+    func setTrackedImage(tracked: Bool) {
+        if (tracked) {
+            trackingImage.image = #imageLiteral(resourceName: "checkboxTicked")
+        } else {
+            trackingImage.image = #imageLiteral(resourceName: "checkboxBlank")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
