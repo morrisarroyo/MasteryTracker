@@ -13,10 +13,6 @@ class TrackedExpertiseTableViewController: UITableViewController {
     @IBOutlet weak var trackedToggle: UISegmentedControl!
     var expertises = [Expertise]()
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        
-    }
-    
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
         //print("Unwind to Root View Controller")
     }

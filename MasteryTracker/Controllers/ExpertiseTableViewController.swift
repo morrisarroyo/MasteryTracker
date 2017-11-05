@@ -111,6 +111,7 @@ class ExpertiseTableViewController: UITableViewController {
             destinationViewController.expertiseNum = self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row
             destinationViewController.subskillNum = subskillNum
             destinationViewController.skillNum = skillNum
+            destinationViewController.expertise = expertises[destinationViewController.expertiseNum!]
         }
  
     }

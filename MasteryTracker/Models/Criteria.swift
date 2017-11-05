@@ -65,6 +65,7 @@ class Criteria: NSObject {
         }
     }
     
+    // Need to sort based on rating
     static func getCriteriaForType(type : CriteriaType) -> [Criteria]{
         let id = Expression<Int>("id")
         let rating = Expression<Int>("rating")

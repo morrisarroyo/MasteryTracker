@@ -10,24 +10,30 @@ import UIKit
 
 class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        
-    }
-    
-    
     @IBOutlet weak var criteriaTable: UITableView!
+    @IBOutlet weak var ratingNumber: UILabel!
+    @IBOutlet weak var ratingName: UILabel!
+    @IBOutlet weak var trackingImage: UIImageView!
+    @IBOutlet weak var expertiseName: UILabel!
     
     var skillNum: Int?
     var subskillNum: Int?
     var expertiseNum: Int?
+    var expertise: Expertise?
     var criterias: [Criteria] = []
     var criteriaCell:  CriteriaTableViewCell = CriteriaTableViewCell()
     override func viewDidLoad() {
         super.viewDidLoad()
         //Criteria.listCriteriasRows()
+        guard expertise != nil else { fatalError("ExpertiseCriteriaViewController received expertise as nil")
+        }
         criterias = Criteria.getCriteriaForType(type:  CriteriaType.expertise)
         criteriaTable.dataSource = self
         criteriaTable.delegate = self
+        ratingNumber.text = expertise!.rating.description
+        ratingName.text = criterias[expertise!.rating].name
+        trackingImage.image = #imageLiteral(resourceName: "checkboxBlank")
+        expertiseName.text = expertise!.name
         // Do any additional setup after loading the view.
     }
 
