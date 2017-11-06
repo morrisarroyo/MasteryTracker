@@ -17,6 +17,9 @@ class Subskill: NSObject {
     static let tcName = Expression<String>("name")
     static let tcRating = Expression<Int>("rating")
     static let tcSkillId = Expression<Int>("skillId")
+    static let minRating: Int = 0
+    static let maxRating: Int = 5
+    
     var id: Int
     var name: String
     var rating: Int
@@ -39,6 +42,45 @@ class Subskill: NSObject {
         self.name = name
         self.rating = rating
         self.skillId = skillId
+    }
+    
+    func incrementRating() -> Int {
+        let temp = rating + 1;
+        if(validateRating(rating: temp)) {
+            let db = Database().db
+            let table = Table(Subskill.tableName)
+            let subskillRow = table.filter(Subskill.tcId == id)
+            do {
+                if(try db.run(subskillRow.update(Subskill.tcRating <- temp)) > 0) {
+                    rating = temp
+                }
+            } catch {
+                print("failed to increment subskill rating")
+            }
+        }
+        return rating
+    }
+    
+    func decrementRating() -> Int {
+        let temp = rating - 1;
+        if(validateRating(rating: temp)) {
+            let db = Database().db
+            let table = Table(Subskill.tableName)
+            let subskillRow = table.filter(Subskill.tcId == id)
+            do {
+                if(try db.run(subskillRow.update(Subskill.tcRating <- temp)) > 0) {
+                    rating = temp
+                }
+                print(rating)
+            } catch {
+                print("failed to increment subskill rating")
+            }
+        }
+        return rating
+    }
+    
+    func validateRating(rating: Int) -> Bool {
+        return (rating >= Subskill.minRating && rating <= Subskill.maxRating)
     }
     
     static func getSubskillForId(id: Int) -> Subskill {

@@ -52,7 +52,7 @@ class Expertise {
                 tracked = !tracked
             }
         } catch {
-            print("failed to increment expertise rating")
+            print("failed to toggle expertise tracked")
         }
         return tracked
     }
