@@ -12,9 +12,16 @@ class SkillTableViewController: UITableViewController {
 
     var skills: [Skill] = Skill.getSkillsForMastery()//FakeDatabase().database
     
+    @objc func showSubskills(sender: UITapGestureRecognizer) {
+        let position: CGPoint =  sender.location(in: self.tableView)
+        let indexPath: IndexPath = self.tableView.indexPathForRow(at: position)!
+        let cell = self.tableView.cellForRow(at: indexPath) as! EntryTableViewCell
+        performSegue(withIdentifier: "ShowSubskillsSegue", sender: cell)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        performSegue(withIdentifier: "ShowSubskillsSegue", sender: cell)
+        performSegue(withIdentifier: "ShowSkillDetailSegue", sender: cell)
     }
     
     override func viewDidLoad() {
@@ -65,8 +72,9 @@ class SkillTableViewController: UITableViewController {
         cell.nameLabel.text = skill.name
         cell.ratingLabel.text = skill.rating.description
         cell.id = skill.id
-        // Configure the cell...
-
+        cell.tapRecognizer1.addTarget(self, action: #selector(SkillTableViewController.showSubskills))
+        cell.nextViewImage.gestureRecognizers = []
+       cell.nextViewImage.gestureRecognizers!.append(cell.tapRecognizer1)
         return cell
     }
     
@@ -116,8 +124,8 @@ class SkillTableViewController: UITableViewController {
         
         if let destinationViewController = segue.destination as? SubskillTableViewController {
             destinationViewController.data = (sender as! EntryTableViewCell).id
+        } else if let destinationViewController = segue.destination as? SkillDetailViewController {
+            destinationViewController.skill = skills[self.tableView.indexPath(for: sender as! EntryTableViewCell)!.row]
         }
     }
-    
-
 }

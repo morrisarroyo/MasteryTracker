@@ -11,6 +11,13 @@ import SQLite
 
 class Skill {
     static let tableName: String = "skills"
+    static let tcId = Expression<Int>("id")
+    static let tcName = Expression<String>("name")
+    static let tcRating = Expression<Int>("rating")
+    static let tcMasteryId = Expression<Int>("masteryId")
+    static let minRating: Int = 0
+    static let maxRating: Int = 5
+    
     var id: Int
     var name : String
     var rating : Int
@@ -55,6 +62,44 @@ class Skill {
         return ski!
     }
     
+    func incrementRating() -> Int {
+        let temp = rating + 1;
+        if(validateRating(rating: temp)) {
+            let db = Database().db
+            let table = Table(Skill.tableName)
+            let skillRow = table.filter(Skill.tcId == id)
+            do {
+                if(try db.run(skillRow.update(Skill.tcRating <- temp)) > 0) {
+                    rating = temp
+                }
+            } catch {
+                print("failed to increment skill rating - Skill")
+            }
+        }
+        return rating
+    }
+    
+    func decrementRating() -> Int {
+        let temp = rating - 1;
+        if(validateRating(rating: temp)) {
+            let db = Database().db
+            let table = Table(Skill.tableName)
+            let skillRow = table.filter(Skill.tcId == id)
+            do {
+                if(try db.run(skillRow.update(Skill.tcRating <- temp)) > 0) {
+                    rating = temp
+                }
+            } catch {
+                print("failed to increment skill rating - Skill")
+            }
+        }
+        return rating
+    }
+    
+    func validateRating(rating: Int) -> Bool {
+        return (rating >= Subskill.minRating && rating <= Subskill.maxRating)
+    }
+        
     static func getSkillsForMastery(num : Int = 1) -> [Skill]{
         let id = Expression<Int>("id")
         let name = Expression<String>("name")

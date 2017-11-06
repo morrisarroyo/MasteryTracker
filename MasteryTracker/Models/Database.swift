@@ -141,18 +141,18 @@ class Database {
         let desc5 = "Complete understanding of this"
         
         //let type0 = "Mastery"
-        //let type1 = "Skill"
+        let type1 = "Skill"
         let type2 = "Subskill"
         let type3 = "Expertise"
         //let desc5Ex = "More than 20hrs of practice for this Expertise"
         do {
             //Subskill
-            try db.run(criterias.insert(or: .replace, rating <- 0, name <- mastery0, description <- desc0, typeId <- 3))
-            try db.run(criterias.insert(or: .replace, rating <- 1, name <- mastery1, description <- desc1, typeId <- 3))
-            try db.run(criterias.insert(or: .replace, rating <- 2, name <- mastery2, description <- desc2, typeId <- 3))
-            try db.run(criterias.insert(or: .replace, rating <- 3, name <- mastery3, description <- desc3, typeId <- 3))
-            try db.run(criterias.insert(or: .replace, rating <- 4, name <- mastery4, description <- desc4, typeId <- 3))
-            try db.run(criterias.insert(or: .replace, rating <- 5, name <- mastery5, description <- "\(desc5) \(type2)", typeId <- 3))
+            try db.run(criterias.insert(or: .replace, rating <- 0, name <- mastery0, description <- desc0, typeId <- 1))
+            try db.run(criterias.insert(or: .replace, rating <- 1, name <- mastery1, description <- desc1, typeId <- 1))
+            try db.run(criterias.insert(or: .replace, rating <- 2, name <- mastery2, description <- desc2, typeId <- 1))
+            try db.run(criterias.insert(or: .replace, rating <- 3, name <- mastery3, description <- desc3, typeId <- 1))
+            try db.run(criterias.insert(or: .replace, rating <- 4, name <- mastery4, description <- desc4, typeId <- 1))
+            try db.run(criterias.insert(or: .replace, rating <- 5, name <- mastery5, description <- "\(desc5) \(type1)", typeId <- 1))
             //Subskill
             try db.run(criterias.insert(or: .replace, rating <- 0, name <- mastery0, description <- desc0, typeId <- 2))
             try db.run(criterias.insert(or: .replace, rating <- 1, name <- mastery1, description <- desc1, typeId <- 2))

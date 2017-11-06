@@ -25,6 +25,7 @@
 		9A92E8E41FA029DA0072434C /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E31FA029DA0072434C /* Expertise.swift */; };
 		9A92E8E91FA02C560072434C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E81FA02C560072434C /* Utility.swift */; };
 		9A92E8ED1FA044FD0072434C /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 9A92E8EC1FA044FC0072434C /* Data */; };
+		9AE0FAAF1FB102D4002D6E30 /* SkillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0FAAE1FB102D4002D6E30 /* SkillDetailViewController.swift */; };
 		9AE779E21F97F37400F385CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE779E11F97F37400F385CC /* AppDelegate.swift */; };
 		9AE779E71F97F37400F385CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE779E51F97F37400F385CC /* Main.storyboard */; };
 		9AE779E91F97F37400F385CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE779E81F97F37400F385CC /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		9A92E8E31FA029DA0072434C /* Expertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expertise.swift; sourceTree = "<group>"; };
 		9A92E8E81FA02C560072434C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9A92E8EC1FA044FC0072434C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		9AE0FAAE1FB102D4002D6E30 /* SkillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailViewController.swift; sourceTree = "<group>"; };
 		9AE779DE1F97F37400F385CC /* MasteryTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasteryTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE779E11F97F37400F385CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AE779E61F97F37400F385CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */,
 				9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */,
 				9A33DB6D1FB02398000BF659 /* SubskillDetailViewController.swift */,
+				9AE0FAAE1FB102D4002D6E30 /* SkillDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				9A08A6401F9A5F9A00C136AC /* SkillTableViewController.swift in Sources */,
 				9A7743C01FAD0DDF00237EBB /* Criteria.swift in Sources */,
 				9A33DB6E1FB02398000BF659 /* SubskillDetailViewController.swift in Sources */,
+				9AE0FAAF1FB102D4002D6E30 /* SkillDetailViewController.swift in Sources */,
 				9A074B011F99A1E900860721 /* WeekTracker.swift in Sources */,
 				9AE77A111F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift in Sources */,
 				9A08A6421F9A66F700C136AC /* SubskillTableViewController.swift in Sources */,
