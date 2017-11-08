@@ -10,15 +10,17 @@ import UIKit
 
 class WeekDays: UIStackView {
 
-    //private var days: Int
-    @IBInspectable var daySize: CGSize = CGSize(width: 35.0, height: 35.0) {
+    private var dayLabels = [UILabel] ()
+    
+    @IBInspectable var width: CGFloat = CGFloat(35.0) {
         didSet {
-            //setupButtons()
+            setupDays()
         }
     }
+    
     @IBInspectable var dayCount: Int = 7 {
         didSet {
-            //setupButtons()
+            setupDays()
         }
     }
     /*
@@ -30,10 +32,48 @@ class WeekDays: UIStackView {
     */
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
+        setupDays()
+        
+    }
+    
+    //Mark: Private Methods
+    private func setupDays() {
+        for label in dayLabels {
+            removeArrangedSubview(label)
+            label.removeFromSuperview()
+        }
+        var date = Date()
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("E\nMMM d")
+        
+        for i in 0..<dayCount {
+            print(i)
+            let label = UILabel()
+            // Attributes
+            label.textAlignment = NSTextAlignment.center
+            label.adjustsFontSizeToFitWidth = true
+            label.numberOfLines = 2
+            
+            // Set Label Text
+            label.text = formatter.string(from: date)
+            date = NSCalendar.current.date(byAdding: .day, value: -1, to: date)!
+            // Constraints
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.widthAnchor.constraint(lessThanOrEqualToConstant: width).isActive = true
+            dayLabels.append(label)
+        }
+        dayLabels = dayLabels.reversed()
+        for label in dayLabels{
+            addArrangedSubview(label)
+            NSLayoutConstraint(item:label, attribute: .centerYWithinMargins, relatedBy: .equal, toItem: self, attribute: .centerYWithinMargins, multiplier: 1.0, constant: 0.0).isActive = true
+            let i = dayLabels.index(of: label)
+            if i! > 0 {
+                NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: dayLabels[i! - 1], attribute: .width, multiplier: 1.0, constant: 0.0).isActive = true
+            }
+        }
     }
 }

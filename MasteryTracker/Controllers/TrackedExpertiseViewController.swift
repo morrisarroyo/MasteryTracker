@@ -13,8 +13,10 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     
     @IBOutlet weak var trackedExpertisesTableView: UITableView!
     @IBOutlet weak var trackedToggle: UISegmentedControl!
-    var expertises = [Expertise]()
     
+    @IBOutlet weak var weekDaysLeading: NSLayoutConstraint!
+    
+    var expertises = [Expertise]()
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
         //print("Unwind to Root View Controller")
     }
@@ -46,7 +48,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         
         cell.nameLabel.text = expertise.name
         cell.ratingLabel.text = expertise.rating.description
-        
+        weekDaysLeading.constant = cell.WeekTracker.frame.origin.x
         return cell
     }
     
@@ -73,8 +75,9 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         super.viewWillAppear(true);
         trackedToggle.selectedSegmentIndex = 0
         loadExpertises()
-        self.trackedExpertisesTableView.reloadData()
+        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

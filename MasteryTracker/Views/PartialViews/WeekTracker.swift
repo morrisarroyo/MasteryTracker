@@ -51,6 +51,7 @@ import UIKit
         }
             dayButtons[index].isSelected = !dayButtons[index].isSelected
     }
+    
     //Mark: Private Methods
     private func setupButtons() {
         
@@ -67,10 +68,8 @@ import UIKit
         let xMark = UIImage(named: "x", in: bundle, compatibleWith: self.traitCollection)
         let checkMark = UIImage(named:"check", in: bundle, compatibleWith: self.traitCollection)
         
-       var i = 0
         for _ in 0..<dayCount {
-            i = i + 1
-            // Create the button
+             // Create the button
             let button = UIButton()
             
             // Set the button images
@@ -81,7 +80,8 @@ import UIKit
             button.translatesAutoresizingMaskIntoConstraints = false
            button.heightAnchor.constraint(lessThanOrEqualToConstant: daySize.width).isActive = true
             button.widthAnchor.constraint(lessThanOrEqualToConstant: daySize.height).isActive = true
-            NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: button, attribute: .height, multiplier: 1.0, constant: 0.0).isActive = true//Setup the button action
+            NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: button, attribute: .height, multiplier: 1.0, constant: 0.0).isActive = true
+            //Setup the button action
             button.addTarget(self, action: #selector(WeekTracker.dayButtonLongPressed(button:)), for: .touchUpInside)
         
             // Add the button to the stack

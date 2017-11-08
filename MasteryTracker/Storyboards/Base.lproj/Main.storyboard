@@ -11,6 +11,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -38,7 +39,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-q6-LXR">
-                                <rect key="frame" x="0.0" y="150" width="414" height="586"/>
+                                <rect key="frame" x="0.0" y="141.33333333333331" width="414" height="594.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackedExpertiseTableViewCell" rowHeight="90" id="IFw-4h-vYz" customClass="TrackedExpertiseTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
@@ -62,7 +63,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-gA-PJS" customClass="WeekTracker" customModule="MasteryTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="33" y="42.333333333333329" width="365" height="31.333333333333329"/>
+                                                    <rect key="frame" x="29.666666666666657" y="42.333333333333329" width="371.33333333333337" height="31.333333333333329"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="wmk-GV-jOc"/>
@@ -77,10 +78,10 @@
                                                 <constraint firstItem="W74-n8-ljB" firstAttribute="top" secondItem="lgx-td-jOO" secondAttribute="top" id="dsC-o2-8hG"/>
                                                 <constraint firstItem="H3O-gA-PJS" firstAttribute="top" secondItem="Ntw-kH-bZy" secondAttribute="bottom" constant="5" id="ijU-Ws-yuY"/>
                                                 <constraint firstItem="W74-n8-ljB" firstAttribute="centerX" secondItem="lgx-td-jOO" secondAttribute="leadingMargin" constant="8" id="qIN-D9-nNC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="H3O-gA-PJS" secondAttribute="trailing" constant="8" id="rez-dn-3QF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="H3O-gA-PJS" secondAttribute="trailing" constant="5" id="rez-dn-3QF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="H3O-gA-PJS" secondAttribute="bottom" constant="8" id="sWG-Sk-LN9"/>
                                                 <constraint firstItem="W74-n8-ljB" firstAttribute="centerY" secondItem="lgx-td-jOO" secondAttribute="centerY" id="vVA-z5-tLu"/>
-                                                <constraint firstItem="H3O-gA-PJS" firstAttribute="leading" secondItem="W74-n8-ljB" secondAttribute="trailing" constant="8" id="whg-V3-RBR"/>
+                                                <constraint firstItem="H3O-gA-PJS" firstAttribute="leading" secondItem="W74-n8-ljB" secondAttribute="trailing" constant="5" id="whg-V3-RBR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -96,19 +97,18 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-Do-6fI">
-                                <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="41"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-R1-qsA">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-R1-qsA" customClass="WeekDays" customModule="MasteryTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="409" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="xCi-G0-3NC"/>
+                                            <constraint firstAttribute="width" secondItem="8uu-R1-qsA" secondAttribute="height" multiplier="200:20" id="fdM-cc-r5F"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4c5-V7-Hd3"/>
-                                    <constraint firstAttribute="trailing" secondItem="8uu-R1-qsA" secondAttribute="trailing" id="Ksy-zg-TY7"/>
+                                    <constraint firstAttribute="trailing" secondItem="8uu-R1-qsA" secondAttribute="trailing" constant="5" id="Ksy-zg-TY7"/>
                                     <constraint firstAttribute="bottom" secondItem="8uu-R1-qsA" secondAttribute="bottom" id="hdd-6r-txe"/>
                                     <constraint firstItem="8uu-R1-qsA" firstAttribute="leading" secondItem="bYE-Do-6fI" secondAttribute="leading" id="mTi-1r-NLQ"/>
                                     <constraint firstItem="8uu-R1-qsA" firstAttribute="top" secondItem="bYE-Do-6fI" secondAttribute="top" id="pUW-Lf-dVY"/>
@@ -134,6 +134,7 @@
                     <connections>
                         <outlet property="trackedExpertisesTableView" destination="rtN-q6-LXR" id="vvu-Ox-YYm"/>
                         <outlet property="trackedToggle" destination="RyJ-ex-OR5" id="gND-ah-T6W"/>
+                        <outlet property="weekDaysLeading" destination="mTi-1r-NLQ" id="lTs-re-UWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O6-Wz-duY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -347,7 +348,7 @@
                                 <rect key="frame" x="0.0" y="58" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mei-Zk-kzt" id="s8H-iF-iIb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTe-DK-yng">
