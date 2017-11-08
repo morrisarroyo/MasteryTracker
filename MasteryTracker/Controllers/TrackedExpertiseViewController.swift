@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TrackedExpertiseTableViewController: UITableViewController {
+class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //MARK: Properties
+    
+    @IBOutlet weak var trackedExpertisesTableView: UITableView!
     @IBOutlet weak var trackedToggle: UISegmentedControl!
     var expertises = [Expertise]()
     
@@ -24,16 +26,13 @@ class TrackedExpertiseTableViewController: UITableViewController {
     }
     
     //MARK: Table View Functions
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
-    }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return expertises.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "TrackedExpertiseTableViewCell"
@@ -59,8 +58,10 @@ class TrackedExpertiseTableViewController: UITableViewController {
         self.tableView.contentInset = UIEdgeInsets(top: UIApplication.shared.statusBarFrame.size.height, left:  CGFloat(0.0), bottom: CGFloat(0.0), right: CGFloat(0.0))
          */
         // Load Sample Data
+        trackedExpertisesTableView.dataSource = self
+            trackedExpertisesTableView.delegate = self
         loadExpertises()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -72,7 +73,7 @@ class TrackedExpertiseTableViewController: UITableViewController {
         super.viewWillAppear(true);
         trackedToggle.selectedSegmentIndex = 0
         loadExpertises()
-        self.tableView.reloadData()
+        self.trackedExpertisesTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

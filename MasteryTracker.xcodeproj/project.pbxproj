@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		96A2C4380781A83B0FBB1A6E /* Pods_MasteryTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17A8BB956A61845F21368EB /* Pods_MasteryTrackerTests.framework */; };
 		9A074B011F99A1E900860721 /* WeekTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B001F99A1E900860721 /* WeekTracker.swift */; };
-		9A074B041F99DF3B00860721 /* TrackedExpertiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */; };
+		9A074B041F99DF3B00860721 /* TrackedExpertiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B031F99DF3B00860721 /* TrackedExpertiseViewController.swift */; };
 		9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B091F99EAE200860721 /* EntryTableViewCell.swift */; };
 		9A074B0C1F99F0B800860721 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B0B1F99F0B800860721 /* Skill.swift */; };
 		9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B0D1F99F2FB00860721 /* Subskill.swift */; };
@@ -17,6 +17,7 @@
 		9A08A6401F9A5F9A00C136AC /* SkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */; };
 		9A08A6421F9A66F700C136AC /* SubskillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */; };
 		9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */; };
+		9A2BB3D91FB2DC5600DF0CA2 /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BB3D81FB2DC5600DF0CA2 /* WeekDays.swift */; };
 		9A33DB6E1FB02398000BF659 /* SubskillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A33DB6D1FB02398000BF659 /* SubskillDetailViewController.swift */; };
 		9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */; };
 		9A7743C01FAD0DDF00237EBB /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743BF1FAD0DDF00237EBB /* Criteria.swift */; };
@@ -61,7 +62,7 @@
 		7095D62E06B5199DA31884DD /* Pods-MasteryTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasteryTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasteryTracker/Pods-MasteryTracker.release.xcconfig"; sourceTree = "<group>"; };
 		739AC2FE179EFF7646CFCC1A /* Pods-MasteryTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasteryTrackerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasteryTrackerUITests/Pods-MasteryTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A074B001F99A1E900860721 /* WeekTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTracker.swift; sourceTree = "<group>"; };
-		9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedExpertiseTableViewController.swift; sourceTree = "<group>"; };
+		9A074B031F99DF3B00860721 /* TrackedExpertiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedExpertiseViewController.swift; sourceTree = "<group>"; };
 		9A074B091F99EAE200860721 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		9A074B0B1F99F0B800860721 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		9A074B0D1F99F2FB00860721 /* Subskill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subskill.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTableViewController.swift; sourceTree = "<group>"; };
 		9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubskillTableViewController.swift; sourceTree = "<group>"; };
 		9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertiseTableViewController.swift; sourceTree = "<group>"; };
+		9A2BB3D81FB2DC5600DF0CA2 /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
 		9A33DB6D1FB02398000BF659 /* SubskillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubskillDetailViewController.swift; sourceTree = "<group>"; };
 		9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertiseDetialViewController.swift; sourceTree = "<group>"; };
 		9A7743BF1FAD0DDF00237EBB /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				9AE77A101F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift */,
 				9A074B091F99EAE200860721 /* EntryTableViewCell.swift */,
 				9A7743C11FAD20F500237EBB /* CriteriaTableViewCell.swift */,
+				9A2BB3D81FB2DC5600DF0CA2 /* WeekDays.swift */,
 			);
 			path = PartialViews;
 			sourceTree = "<group>";
@@ -173,7 +176,7 @@
 				9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */,
 				9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */,
 				9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */,
-				9A074B031F99DF3B00860721 /* TrackedExpertiseTableViewController.swift */,
+				9A074B031F99DF3B00860721 /* TrackedExpertiseViewController.swift */,
 				9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */,
 				9A33DB6D1FB02398000BF659 /* SubskillDetailViewController.swift */,
 				9AE0FAAE1FB102D4002D6E30 /* SkillDetailViewController.swift */,
@@ -570,6 +573,7 @@
 			files = (
 				9A08A6401F9A5F9A00C136AC /* SkillTableViewController.swift in Sources */,
 				9A7743C01FAD0DDF00237EBB /* Criteria.swift in Sources */,
+				9A2BB3D91FB2DC5600DF0CA2 /* WeekDays.swift in Sources */,
 				9A33DB6E1FB02398000BF659 /* SubskillDetailViewController.swift in Sources */,
 				9AE0FAAF1FB102D4002D6E30 /* SkillDetailViewController.swift in Sources */,
 				9A074B011F99A1E900860721 /* WeekTracker.swift in Sources */,
@@ -582,7 +586,7 @@
 				9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */,
 				9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */,
 				9A7743C21FAD20F500237EBB /* CriteriaTableViewCell.swift in Sources */,
-				9A074B041F99DF3B00860721 /* TrackedExpertiseTableViewController.swift in Sources */,
+				9A074B041F99DF3B00860721 /* TrackedExpertiseViewController.swift in Sources */,
 				9A074B0C1F99F0B800860721 /* Skill.swift in Sources */,
 				9AE779E21F97F37400F385CC /* AppDelegate.swift in Sources */,
 				9A81E9B01F9DB54D00500589 /* Database.swift in Sources */,
