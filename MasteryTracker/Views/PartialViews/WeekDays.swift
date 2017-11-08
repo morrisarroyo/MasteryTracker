@@ -50,8 +50,8 @@ class WeekDays: UIStackView {
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("E\nMMM d")
         
-        for i in 0..<dayCount {
-            print(i)
+        for _ in 0..<dayCount {
+            //print(i)
             let label = UILabel()
             // Attributes
             label.textAlignment = NSTextAlignment.center
