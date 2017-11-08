@@ -10,7 +10,7 @@ import UIKit
 
 class SkillTableViewController: UITableViewController {
 
-    var skills: [Skill] = Skill.getSkillsForMastery()//FakeDatabase().database
+    var skills: [Skill] = Skill.getSkillsForMastery()
     
     @objc func showSubskills(sender: UITapGestureRecognizer) {
         let position: CGPoint =  sender.location(in: self.tableView)

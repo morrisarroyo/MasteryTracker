@@ -48,7 +48,7 @@ class WeekDays: UIStackView {
         }
         var date = Date()
         let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("E\nMMM d")
+        formatter.dateFormat = "E\nMMM d"
         
         for _ in 0..<dayCount {
             //print(i)
@@ -59,6 +59,7 @@ class WeekDays: UIStackView {
             label.numberOfLines = 2
             
             // Set Label Text
+            
             label.text = formatter.string(from: date)
             date = NSCalendar.current.date(byAdding: .day, value: -1, to: date)!
             // Constraints
