@@ -26,7 +26,7 @@
 		9A92A2E01FB41B12004C0963 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DC1FB41B11004C0963 /* Database.swift */; };
 		9A92A2E11FB41B12004C0963 /* FakeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DD1FB41B11004C0963 /* FakeDatabase.swift */; };
 		9A92A2E31FB41B12004C0963 /* TrackedReportAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DF1FB41B12004C0963 /* TrackedReportAbstraction.swift */; };
-		9A92A2E51FB41C83004C0963 /* TrackedExpertiseAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2E41FB41C83004C0963 /* TrackedExpertiseAbstraction.swift */; };
+		9A92A2E51FB41C83004C0963 /* TrackedAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2E41FB41C83004C0963 /* TrackedAbstraction.swift */; };
 		9A92E8E41FA029DA0072434C /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E31FA029DA0072434C /* Expertise.swift */; };
 		9A92E8E91FA02C560072434C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E81FA02C560072434C /* Utility.swift */; };
 		9A92E8ED1FA044FD0072434C /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 9A92E8EC1FA044FC0072434C /* Data */; };
@@ -83,7 +83,7 @@
 		9A92A2DC1FB41B11004C0963 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9A92A2DD1FB41B11004C0963 /* FakeDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDatabase.swift; sourceTree = "<group>"; };
 		9A92A2DF1FB41B12004C0963 /* TrackedReportAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedReportAbstraction.swift; sourceTree = "<group>"; };
-		9A92A2E41FB41C83004C0963 /* TrackedExpertiseAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedExpertiseAbstraction.swift; sourceTree = "<group>"; };
+		9A92A2E41FB41C83004C0963 /* TrackedAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedAbstraction.swift; sourceTree = "<group>"; };
 		9A92E8E31FA029DA0072434C /* Expertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expertise.swift; sourceTree = "<group>"; };
 		9A92E8E81FA02C560072434C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9A92E8EC1FA044FC0072434C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				9A92A2DC1FB41B11004C0963 /* Database.swift */,
 				9A92A2DD1FB41B11004C0963 /* FakeDatabase.swift */,
 				9A92A2DF1FB41B12004C0963 /* TrackedReportAbstraction.swift */,
-				9A92A2E41FB41C83004C0963 /* TrackedExpertiseAbstraction.swift */,
+				9A92A2E41FB41C83004C0963 /* TrackedAbstraction.swift */,
 			);
 			path = Abstractions;
 			sourceTree = "<group>";
@@ -606,7 +606,7 @@
 				9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */,
 				9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */,
 				9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */,
-				9A92A2E51FB41C83004C0963 /* TrackedExpertiseAbstraction.swift in Sources */,
+				9A92A2E51FB41C83004C0963 /* TrackedAbstraction.swift in Sources */,
 				9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */,
 				9A845A8D1FB3C018001E1D43 /* TrackedReport.swift in Sources */,
 				9A7743C21FAD20F500237EBB /* CriteriaTableViewCell.swift in Sources */,
