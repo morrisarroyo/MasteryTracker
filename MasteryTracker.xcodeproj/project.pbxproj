@@ -13,7 +13,6 @@
 		9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B091F99EAE200860721 /* EntryTableViewCell.swift */; };
 		9A074B0C1F99F0B800860721 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B0B1F99F0B800860721 /* Skill.swift */; };
 		9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B0D1F99F2FB00860721 /* Subskill.swift */; };
-		9A074B121F99F9D800860721 /* FakeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A074B111F99F9D800860721 /* FakeDatabase.swift */; };
 		9A08A6401F9A5F9A00C136AC /* SkillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */; };
 		9A08A6421F9A66F700C136AC /* SubskillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */; };
 		9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */; };
@@ -22,7 +21,12 @@
 		9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */; };
 		9A7743C01FAD0DDF00237EBB /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743BF1FAD0DDF00237EBB /* Criteria.swift */; };
 		9A7743C21FAD20F500237EBB /* CriteriaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743C11FAD20F500237EBB /* CriteriaTableViewCell.swift */; };
-		9A81E9B01F9DB54D00500589 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81E9AF1F9DB54D00500589 /* Database.swift */; };
+		9A845A8D1FB3C018001E1D43 /* TrackedReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A845A8C1FB3C018001E1D43 /* TrackedReport.swift */; };
+		9A92A2D91FB419B3004C0963 /* TrackedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2D81FB419B3004C0963 /* TrackedDay.swift */; };
+		9A92A2E01FB41B12004C0963 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DC1FB41B11004C0963 /* Database.swift */; };
+		9A92A2E11FB41B12004C0963 /* FakeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DD1FB41B11004C0963 /* FakeDatabase.swift */; };
+		9A92A2E31FB41B12004C0963 /* TrackedReportAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DF1FB41B12004C0963 /* TrackedReportAbstraction.swift */; };
+		9A92A2E51FB41C83004C0963 /* TrackedExpertiseAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2E41FB41C83004C0963 /* TrackedExpertiseAbstraction.swift */; };
 		9A92E8E41FA029DA0072434C /* Expertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E31FA029DA0072434C /* Expertise.swift */; };
 		9A92E8E91FA02C560072434C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92E8E81FA02C560072434C /* Utility.swift */; };
 		9A92E8ED1FA044FD0072434C /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 9A92E8EC1FA044FC0072434C /* Data */; };
@@ -66,7 +70,6 @@
 		9A074B091F99EAE200860721 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		9A074B0B1F99F0B800860721 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		9A074B0D1F99F2FB00860721 /* Subskill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subskill.swift; sourceTree = "<group>"; };
-		9A074B111F99F9D800860721 /* FakeDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDatabase.swift; sourceTree = "<group>"; };
 		9A08A63F1F9A5F9A00C136AC /* SkillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTableViewController.swift; sourceTree = "<group>"; };
 		9A08A6411F9A66F700C136AC /* SubskillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubskillTableViewController.swift; sourceTree = "<group>"; };
 		9A08A6431F9A85D900C136AC /* ExpertiseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertiseTableViewController.swift; sourceTree = "<group>"; };
@@ -75,7 +78,12 @@
 		9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertiseDetialViewController.swift; sourceTree = "<group>"; };
 		9A7743BF1FAD0DDF00237EBB /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
 		9A7743C11FAD20F500237EBB /* CriteriaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTableViewCell.swift; sourceTree = "<group>"; };
-		9A81E9AF1F9DB54D00500589 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9A845A8C1FB3C018001E1D43 /* TrackedReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedReport.swift; sourceTree = "<group>"; };
+		9A92A2D81FB419B3004C0963 /* TrackedDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedDay.swift; sourceTree = "<group>"; };
+		9A92A2DC1FB41B11004C0963 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9A92A2DD1FB41B11004C0963 /* FakeDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDatabase.swift; sourceTree = "<group>"; };
+		9A92A2DF1FB41B12004C0963 /* TrackedReportAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedReportAbstraction.swift; sourceTree = "<group>"; };
+		9A92A2E41FB41C83004C0963 /* TrackedExpertiseAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedExpertiseAbstraction.swift; sourceTree = "<group>"; };
 		9A92E8E31FA029DA0072434C /* Expertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expertise.swift; sourceTree = "<group>"; };
 		9A92E8E81FA02C560072434C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9A92E8EC1FA044FC0072434C /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
@@ -137,15 +145,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A845A901FB3C2F9001E1D43 /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				9A92A2DC1FB41B11004C0963 /* Database.swift */,
+				9A92A2DD1FB41B11004C0963 /* FakeDatabase.swift */,
+				9A92A2DF1FB41B12004C0963 /* TrackedReportAbstraction.swift */,
+				9A92A2E41FB41C83004C0963 /* TrackedExpertiseAbstraction.swift */,
+			);
+			path = Abstractions;
+			sourceTree = "<group>";
+		};
 		9A92E8DE1FA028090072434C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9A81E9AF1F9DB54D00500589 /* Database.swift */,
-				9A074B111F99F9D800860721 /* FakeDatabase.swift */,
+				9A845A901FB3C2F9001E1D43 /* Abstractions */,
 				9A92E8E31FA029DA0072434C /* Expertise.swift */,
 				9A074B0B1F99F0B800860721 /* Skill.swift */,
 				9A074B0D1F99F2FB00860721 /* Subskill.swift */,
 				9A7743BF1FAD0DDF00237EBB /* Criteria.swift */,
+				9A845A8C1FB3C018001E1D43 /* TrackedReport.swift */,
+				9A92A2D81FB419B3004C0963 /* TrackedDay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -577,20 +597,24 @@
 				9A33DB6E1FB02398000BF659 /* SubskillDetailViewController.swift in Sources */,
 				9AE0FAAF1FB102D4002D6E30 /* SkillDetailViewController.swift in Sources */,
 				9A074B011F99A1E900860721 /* WeekTracker.swift in Sources */,
+				9A92A2D91FB419B3004C0963 /* TrackedDay.swift in Sources */,
 				9AE77A111F97FB2300F385CC /* TrackedExpertiseTableViewCell.swift in Sources */,
 				9A08A6421F9A66F700C136AC /* SubskillTableViewController.swift in Sources */,
 				9A92E8E91FA02C560072434C /* Utility.swift in Sources */,
 				9A92E8E41FA029DA0072434C /* Expertise.swift in Sources */,
+				9A92A2E11FB41B12004C0963 /* FakeDatabase.swift in Sources */,
 				9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */,
 				9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */,
 				9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */,
+				9A92A2E51FB41C83004C0963 /* TrackedExpertiseAbstraction.swift in Sources */,
 				9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */,
+				9A845A8D1FB3C018001E1D43 /* TrackedReport.swift in Sources */,
 				9A7743C21FAD20F500237EBB /* CriteriaTableViewCell.swift in Sources */,
 				9A074B041F99DF3B00860721 /* TrackedExpertiseViewController.swift in Sources */,
 				9A074B0C1F99F0B800860721 /* Skill.swift in Sources */,
 				9AE779E21F97F37400F385CC /* AppDelegate.swift in Sources */,
-				9A81E9B01F9DB54D00500589 /* Database.swift in Sources */,
-				9A074B121F99F9D800860721 /* FakeDatabase.swift in Sources */,
+				9A92A2E31FB41B12004C0963 /* TrackedReportAbstraction.swift in Sources */,
+				9A92A2E01FB41B12004C0963 /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

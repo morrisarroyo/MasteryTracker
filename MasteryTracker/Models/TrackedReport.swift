@@ -1,0 +1,13 @@
+//
+//  TrackingReport.swift
+//  MasteryTracker
+//
+//  Created by Morris Arroyo on 2017-11-08.
+//  Copyright © 2017 BCIT. All rights reserved.
+//
+
+import UIKit
+
+class TrackingReport: NSObject {
+
+}

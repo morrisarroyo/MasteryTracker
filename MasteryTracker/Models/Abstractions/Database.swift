@@ -23,10 +23,20 @@ class Database {
     
     func createTables() {
         createSkillsTable()
+        createSubskillsTable()
         createExpertisesTable()
         createCriteriaTypesTable()
         createCriteriasTable()
+        createTrackedExpertisesTable()
+        createTrackedReportsTable()
+        createTrackedDaysTable()
     }
+    
+    /*
+    func dropTables() {
+        try db.run(users.drop(ifExists: true))
+    }
+    */
     
     func createSkillsTable() {
         let id = Expression<Int>("id")
@@ -45,6 +55,26 @@ class Database {
             })
         } catch {
             print("Could not create skills table")
+        }
+    }
+    
+    func createSubskillsTable() {
+        let id = Expression<Int>("id")
+        let name = Expression<String>("name")
+        let rating = Expression<Int>("rating")
+        let skillId = Expression<Int>("skillId")
+        
+        let subskills = Table("subskills")
+        
+        do {
+            try db.run(subskills.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: .autoincrement)
+                t.column(name, unique: true)
+                t.column(rating)
+                t.column(skillId)
+            })
+        } catch {
+            print("Could not create subskills table")
         }
     }
     
@@ -169,6 +199,64 @@ class Database {
             try db.run(criterias.insert(or: .replace, rating <- 5, name <- mastery5, description <- "\(desc5) \(type3)", typeId <- 3))
         } catch {
             print("insertion failed: \(error)")
+        }
+    }
+    
+    func createTrackedReportsTable() {
+        let id = Expression<Int>("id")
+        let currentStreak = Expression<Int>("currentStreak")
+        let longestStreak = Expression<Int>("longestStreak")
+        let daysSinceFirst = Expression<Int>("daysSinceFirst")
+        let history = Expression<String>("history")
+        let trackingId  = Expression<Int>("trackingId")
+        
+        let table = Table("trackedReports")
+        do {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: .autoincrement)
+                t.column(currentStreak)
+                t.column(longestStreak)
+                t.column(daysSinceFirst)
+                t.column(history)
+                t.column(trackingId)
+                t.unique(trackingId)
+            })
+        } catch {
+            print("Could not create tracked reports table")
+        }
+    }
+    
+    func createTrackedExpertisesTable() {
+        let id              = Expression<Int>("id")
+        let expertiseId     = Expression<Int>("expertiseId")
+        
+        let table = Table("trackedExpertises")
+        do {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: .autoincrement)
+                t.column(expertiseId)
+                t.unique(expertiseId)
+            })
+        } catch {
+            print("Could not create tracked expertises table")
+        }
+    }
+    
+    func createTrackedDaysTable() {
+        let dayOffset    = Expression<Int>("dayOffset")
+        let done         = Expression<Bool>("done")
+        let trackingId   = Expression<Int>("trackingId")
+        
+        let table        = Table("trackedDays")
+        do {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(dayOffset)
+                t.column(done)
+                t.column(trackingId)
+                t.primaryKey(dayOffset, trackingId)
+            })
+        } catch {
+            print("Could not create tracked days table")
         }
     }
 }

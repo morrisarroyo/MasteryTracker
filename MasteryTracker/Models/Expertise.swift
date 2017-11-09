@@ -99,6 +99,7 @@ class Expertise {
     func validateRating(rating: Int) -> Bool {
         return (rating >= Expertise.minRating && rating <= Expertise.maxRating)
     }
+    
     static func getExpertisesForSubskill(num : Int) -> [Expertise]{
         let id = Expression<Int>("id")
         let name = Expression<String>("name")
