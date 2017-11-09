@@ -27,7 +27,7 @@ class Database {
         createExpertisesTable()
         createCriteriaTypesTable()
         createCriteriasTable()
-        createTrackedExpertisesTable()
+        createTrackedTable()
         createTrackedReportsTable()
         createTrackedDaysTable()
     }
@@ -226,19 +226,21 @@ class Database {
         }
     }
     
-    func createTrackedExpertisesTable() {
-        let id              = Expression<Int>("id")
-        let expertiseId     = Expression<Int>("expertiseId")
+    func createTrackedTable() {
+        let id           = Expression<Int>("id")
+        let typeId       = Expression<Int>("typeId") //criteriaType id (mastery = 0, skill = 1, subskill = 2, expertise = 3)
+        let objectId     = Expression<Int>("objectId") // id from object of typeId criteriaType
         
         let table = Table("trackedExpertises")
         do {
             try db.run(table.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
-                t.column(expertiseId)
-                t.unique(expertiseId)
+                t.column(typeId)
+                t.column(objectId)
+                t.unique(typeId, objectId)
             })
         } catch {
-            print("Could not create tracked expertises table")
+            print("Could not create tracked table")
         }
     }
     

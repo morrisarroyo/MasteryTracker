@@ -10,27 +10,45 @@ import Foundation
 import SQLite
 
 /*
- * TrackedExpertiseAbstraction class.
+ * TrackedAbstraction class.
  *
- * Provides access to trackedExpertises table
+ * Provides access to tracked table
  * and trackedDays table.
  */
-class TrackedExpertiseAbstraction {
-    static let trackedExpertisesTableName = "trackedExpertises"
-    static let trackedDaysTableName       = "trackedDays"
+class TrackedAbstraction {
+    static let trackedTableName      = "tracked"
+    static let trackedDaysTableName  = "trackedDays"
     // tables
-    let trackedExpertises    = Table(trackedExpertisesTableName)
+    let tracked              = Table(trackedTableName)
     let trackedDays          = Table(trackedDaysTableName)
     // trackedExpertises columns
-    let teId              = Expression<Int>("id")
-    let expertiseId     = Expression<Int>("expertiseId")
+    let trackedId            = Expression<Int>("id")
+    let typeId               = Expression<Int>("typeId")
+    let objectId             = Expression<Int>("objectId")
     // trackedDays columns
     let dayOffset       = Expression<Int>("dayOffset")
     let done            = Expression<Bool>("done")
     let trackingId      = Expression<Int>("trackingId")
     
     func getTrackedDaysForExpertise(id: Int) -> [TrackedDay]{
+        var days: [TrackedDay] = []
         let db = Database().db
+        let joined = tracked.join(trackedDays, on: trackedId == trackingId)
+        let query = joined.filter(joined[typeId] == CriteriaType.expertise.rawValue && joined[objectId] == id)
+        do {
+            for day in try db.prepare(query) {
+                let trackedDay = TrackedDay(
+                    dayOffset: try day.get(dayOffset)
+                    ,done:     try day.get(done)
+                    ,objectId: try day.get(objectId)
+                    ,typeId:   try day.get(typeId)
+                )
+                days.append(trackedDay)
+            }
+        } catch {
+            print("Failed to get list of tracked days from database of expertise id \(id)")
+        }
+        return days
         /*
          let query = expertisesTable.filter(subskillId == num)
          do {
@@ -42,7 +60,7 @@ class TrackedExpertiseAbstraction {
          print("Failed to get list of expertises from database");
          }
          return expertises*/
-        return []
+        
     }
     /*
      static func listExpertisesRows() {

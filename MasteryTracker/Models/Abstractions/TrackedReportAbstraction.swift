@@ -17,8 +17,7 @@ class TrackingReportAbstraction {
     let longestStreak = Expression<Int>("longestStreak")
     let daysSinceFirst = Expression<Int>("daysSinceFirst")
     let history = Expression<String>("history")
-    let expertiseId  = Expression<Int>("expertiseId")
-    let typeId = Expression<Int>("typeId")
+    let trackingId  = Expression<Int>("trackingId")
     /*
     let trackingReports = Table("trackingReports")
     do {
