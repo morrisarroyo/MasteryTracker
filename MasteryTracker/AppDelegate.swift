@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Utility.copyDatabase()
         let db : Database = Database()
         db.createTables()
+        db.populateTrackingTables()
+        TestTrackingData().testFirstDayTrackingReportData()
         return true
     }
 

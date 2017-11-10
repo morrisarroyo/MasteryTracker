@@ -21,6 +21,8 @@
 		9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */; };
 		9A7743C01FAD0DDF00237EBB /* Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743BF1FAD0DDF00237EBB /* Criteria.swift */; };
 		9A7743C21FAD20F500237EBB /* CriteriaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7743C11FAD20F500237EBB /* CriteriaTableViewCell.swift */; };
+		9A80483D1FB55C74008AE054 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80483C1FB55C74008AE054 /* DateUtility.swift */; };
+		9A80483F1FB5822E008AE054 /* TestTrackingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A80483E1FB5822E008AE054 /* TestTrackingData.swift */; };
 		9A845A8D1FB3C018001E1D43 /* TrackedReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A845A8C1FB3C018001E1D43 /* TrackedReport.swift */; };
 		9A92A2D91FB419B3004C0963 /* TrackedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2D81FB419B3004C0963 /* TrackedDay.swift */; };
 		9A92A2E01FB41B12004C0963 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92A2DC1FB41B11004C0963 /* Database.swift */; };
@@ -77,6 +79,8 @@
 		9A7743BD1FACF44A00237EBB /* ExpertiseDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertiseDetialViewController.swift; sourceTree = "<group>"; };
 		9A7743BF1FAD0DDF00237EBB /* Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Criteria.swift; sourceTree = "<group>"; };
 		9A7743C11FAD20F500237EBB /* CriteriaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaTableViewCell.swift; sourceTree = "<group>"; };
+		9A80483C1FB55C74008AE054 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		9A80483E1FB5822E008AE054 /* TestTrackingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackingData.swift; sourceTree = "<group>"; };
 		9A845A8C1FB3C018001E1D43 /* TrackedReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedReport.swift; sourceTree = "<group>"; };
 		9A92A2D81FB419B3004C0963 /* TrackedDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedDay.swift; sourceTree = "<group>"; };
 		9A92A2DC1FB41B11004C0963 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -141,6 +145,16 @@
 				6A296514585912ECF6ADCFED /* Pods_MasteryTrackerUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A80483B1FB55C3D008AE054 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9A92E8E81FA02C560072434C /* Utility.swift */,
+				9A80483C1FB55C74008AE054 /* DateUtility.swift */,
+				9A80483E1FB5822E008AE054 /* TestTrackingData.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9A845A901FB3C2F9001E1D43 /* Abstractions */ = {
@@ -235,9 +249,9 @@
 		9AE779E01F97F37400F385CC /* MasteryTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9A80483B1FB55C3D008AE054 /* Utilities */,
 				9A92E8EC1FA044FC0072434C /* Data */,
 				9AE779E11F97F37400F385CC /* AppDelegate.swift */,
-				9A92E8E81FA02C560072434C /* Utility.swift */,
 				9A92E8E11FA0285D0072434C /* Controllers */,
 				9A92E8DE1FA028090072434C /* Models */,
 				9A92E8E21FA028810072434C /* Storyboards */,
@@ -602,6 +616,7 @@
 				9A92A2E11FB41B12004C0963 /* FakeDatabase.swift in Sources */,
 				9A08A6441F9A85D900C136AC /* ExpertiseTableViewController.swift in Sources */,
 				9A074B0A1F99EAE200860721 /* EntryTableViewCell.swift in Sources */,
+				9A80483F1FB5822E008AE054 /* TestTrackingData.swift in Sources */,
 				9A7743BE1FACF44A00237EBB /* ExpertiseDetialViewController.swift in Sources */,
 				9A92A2E51FB41C83004C0963 /* TrackedAbstraction.swift in Sources */,
 				9A074B0E1F99F2FB00860721 /* Subskill.swift in Sources */,
@@ -610,6 +625,7 @@
 				9A074B041F99DF3B00860721 /* TrackedExpertiseViewController.swift in Sources */,
 				9A074B0C1F99F0B800860721 /* Skill.swift in Sources */,
 				9AE779E21F97F37400F385CC /* AppDelegate.swift in Sources */,
+				9A80483D1FB55C74008AE054 /* DateUtility.swift in Sources */,
 				9A92A2E01FB41B12004C0963 /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

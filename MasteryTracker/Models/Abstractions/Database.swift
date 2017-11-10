@@ -32,12 +32,6 @@ class Database {
         createTrackedDaysTable()
     }
     
-    /*
-    func dropTables() {
-        try db.run(users.drop(ifExists: true))
-    }
-    */
-    
     func createSkillsTable() {
         let id = Expression<Int>("id")
         let name = Expression<String>("name")
@@ -97,17 +91,6 @@ class Database {
         } catch {
             print("Could not create expertises table")
         }
-        
-        /*
-        do {
-            try db.run(expertises.insert(or: .replace, name <- "Mango", rating <- 2, tracked <- true, subskillId <- 0))
-            try db.run(expertises.insert(or: .replace, name <- "Facial Muscles", rating <- 1, tracked <- true, subskillId <- 0))
-            try db.run(expertises.insert(or: .replace, name <- "Torso Structure", rating <- 1, tracked <- true, subskillId <- 1))
-            try db.run(expertises.insert(or: .replace, name <- "Torso Muscles", rating <- 2, tracked <- false, subskillId <- 1))
-        } catch {
-            print("insertion failed: \(error)")
-        }
-        */
     }
     
     func createCriteriaTypesTable()
@@ -203,12 +186,12 @@ class Database {
     }
     
     func createTrackedReportsTable() {
-        let id = Expression<Int>("id")
+        let id            = Expression<Int>("id")
         let currentStreak = Expression<Int>("currentStreak")
         let longestStreak = Expression<Int>("longestStreak")
-        let daysSinceFirst = Expression<Int>("daysSinceFirst")
-        let history = Expression<String>("history")
-        let trackingId  = Expression<Int>("trackingId")
+        let firstDay      = Expression<String>("firstDay")
+        let history       = Expression<String>("history")
+        let trackingId    = Expression<Int>("trackingId")
         
         let table = Table("trackedReports")
         do {
@@ -216,7 +199,7 @@ class Database {
                 t.column(id, primaryKey: .autoincrement)
                 t.column(currentStreak)
                 t.column(longestStreak)
-                t.column(daysSinceFirst)
+                t.column(firstDay)
                 t.column(history)
                 t.column(trackingId)
                 t.unique(trackingId)
@@ -231,7 +214,7 @@ class Database {
         let typeId       = Expression<Int>("typeId") //criteriaType id (mastery = 0, skill = 1, subskill = 2, expertise = 3)
         let objectId     = Expression<Int>("objectId") // id from object of typeId criteriaType
         
-        let table = Table("trackedExpertises")
+        let table = Table("tracked")
         do {
             try db.run(table.create(ifNotExists: true) { t in
                 t.column(id, primaryKey: .autoincrement)
@@ -259,6 +242,26 @@ class Database {
             })
         } catch {
             print("Could not create tracked days table")
+        }
+    }
+    
+    func populateTrackingTables() {
+        let db = Database().db
+        var expertiseIds = [Int]()
+        let id = Expression<Int>("id")
+        let expertises = Table("expertises")
+        let tracking =  TrackedAbstraction()
+        do {
+            for expertise in try db.prepare(expertises) {
+                expertiseIds.append(try expertise.get(id))
+            }
+        } catch {
+            print("populateTrackingTable, Failed to prepare list of expertises from database")
+        }
+        for id in expertiseIds {
+            if tracking.createTrackingForExpertise(id: id) == nil {
+                print("populateTrackingTable, Failed createTrackingForExpertise with id \(id)")
+            }
         }
     }
 }

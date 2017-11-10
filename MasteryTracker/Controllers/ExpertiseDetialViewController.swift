@@ -52,7 +52,6 @@ class ExpertiseCriteriaViewController: UIViewController, UITableViewDataSource, 
     }
     
     @IBAction func toggleTracked(sender: UITapGestureRecognizer) {
-        print("toggle")
         setTrackedImage(tracked: expertise!.toggleTracked())
     }
     

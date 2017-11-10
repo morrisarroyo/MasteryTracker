@@ -48,7 +48,10 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         
         cell.nameLabel.text = expertise.name
         cell.ratingLabel.text = expertise.rating.description
+        cell.WeekTracker.setTracking(id: expertise.id, type: CriteriaType.expertise)
+        cell.WeekTracker.updateButtons()
         weekDaysLeading.constant = cell.WeekTracker.frame.origin.x
+        
         return cell
     }
     
@@ -75,7 +78,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         super.viewWillAppear(true);
         trackedToggle.selectedSegmentIndex = 0
         loadExpertises()
-        
+        trackedExpertisesTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

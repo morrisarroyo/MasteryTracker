@@ -12,20 +12,20 @@ class TrackedReport: NSObject {
     var reportId        : Int
     var currentStreak   : Int
     var longestStreak   : Int
-    var daysSinceFirst  : Int
+    var firstDay        : String
     var history         : String
     var trackingId      : Int
     
     init (  reportId        : Int
             ,currentStreak  : Int
             ,longestStreak  : Int
-            ,daysSinceFirst : Int
+            ,firstDay       : String
             ,history        : String
             ,trackingId     : Int) {
         self.reportId       = reportId
         self.currentStreak  = currentStreak
         self.longestStreak  = longestStreak
-        self.daysSinceFirst = daysSinceFirst
+        self.firstDay       = firstDay
         self.history        = history
         self.trackingId     = trackingId
     }
