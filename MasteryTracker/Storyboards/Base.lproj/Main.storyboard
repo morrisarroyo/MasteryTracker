@@ -363,7 +363,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Expertise" placeholder="Banana" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REY-ma-GRi">
-                                            <rect key="frame" x="31" y="14.333333333333336" width="333.66666666666669" height="21"/>
+                                            <rect key="frame" x="31" y="14.333333333333336" width="370" height="21"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             </accessibility>
@@ -371,27 +371,15 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextThin" translatesAutoresizingMaskIntoConstraints="NO" id="Dav-Gp-hhr">
-                                            <rect key="frame" x="372.66666666666674" y="12" width="33.333333333333314" height="25"/>
-                                            <gestureRecognizers/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Dav-Gp-hhr" secondAttribute="height" multiplier="4:3" id="vNR-VG-rFB"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mTe-DK-yng" firstAttribute="centerY" secondItem="s8H-iF-iIb" secondAttribute="centerY" id="2uv-Ct-jIS"/>
                                         <constraint firstItem="REY-ma-GRi" firstAttribute="leading" secondItem="mTe-DK-yng" secondAttribute="trailing" constant="8" id="5Dm-M5-v1V"/>
                                         <constraint firstItem="REY-ma-GRi" firstAttribute="centerY" secondItem="s8H-iF-iIb" secondAttribute="centerY" id="DCO-Vt-lns"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Dav-Gp-hhr" secondAttribute="trailing" id="RMq-bM-I8O"/>
-                                        <constraint firstItem="Dav-Gp-hhr" firstAttribute="leading" secondItem="REY-ma-GRi" secondAttribute="trailing" priority="750" constant="8" id="UPc-gg-a8Z"/>
                                         <constraint firstItem="mTe-DK-yng" firstAttribute="leading" secondItem="s8H-iF-iIb" secondAttribute="leadingMargin" id="h40-88-PVb"/>
-                                        <constraint firstItem="Dav-Gp-hhr" firstAttribute="centerY" secondItem="s8H-iF-iIb" secondAttribute="centerY" id="rMw-Qz-ayv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="REY-ma-GRi" secondAttribute="trailing" constant="5" id="iVe-xA-rPO"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="Dav-Gp-hhr" firstAttribute="height" secondItem="Mei-Zk-kzt" secondAttribute="height" multiplier="1:2" id="tL7-i7-G9H"/>
-                                </constraints>
                                 <viewLayoutGuide key="safeArea" id="NUe-Bj-mkQ"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="REY-ma-GRi" id="PdG-lK-rmb"/>
