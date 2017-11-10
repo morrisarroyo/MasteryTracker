@@ -16,29 +16,26 @@ class TestTrackingData: NSObject {
         let trackingId = Expression<Int>("trackingId")
         let firstDay = Expression<String>("firstDay")
         
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
         var count = 0
-        var date = NSDate()
         do {
             count = try db.scalar(table.count)
         } catch {
             print("testFirstDayTrackingReportData, Failed query on trackingReports table")
         }
         
-        do {
-            
-            print("\(count) \(date.description) ")
-            
-            //let query = table.filter(trackingId == id)
-            for id in 0..<count {
-                let query = table.filter(trackingId == id)
-                try db.run(query.update(firstDay <- date.description))
-                date = NSCalendar.current.date(byAdding: .day, value: -1, to: date as Date)! as NSDate
+        var date = NSDate()
+        let df = DateFormatter()
+        df.dateFormat = "YYYY-MM-dd"
+        //let query = table.filter(trackingId == id)
+        for id in 0..<count {
+            let dateStr = df.string(from: date as Date)
+            let query = table.filter(trackingId == id)
+            do {
+                try db.run(query.update(firstDay <- dateStr))
+            } catch  {
+                print("testFirstDayTrackingReportData, Failed update tracking reports: trackingId \(id)")
             }
-        } catch let error {
-            print("testFirstDayTrackingReportData, Failed update tracking reports: \(error)")
+            date = NSCalendar.current.date(byAdding: .day, value: -1, to: date as Date)! as NSDate
         }
     }
-
 }

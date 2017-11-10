@@ -69,7 +69,7 @@ import UIKit
             print("setTracking, No trackedReport for id \(id) and typeId \(type)")
         }
         let df = DateFormatter()
-        df.dateFormat = "YYYY-MM-dd HH:mm:s"
+        df.dateFormat = "YYYY-MM-dd"
         print(trackedReport!.firstDay)
         if trackedReport!.firstDay.count > 0 {
             let since = df.date(from: trackedReport!.firstDay)!
