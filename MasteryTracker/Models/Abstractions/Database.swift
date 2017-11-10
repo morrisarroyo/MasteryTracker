@@ -263,5 +263,6 @@ class Database {
                 print("populateTrackingTable, Failed createTrackingForExpertise with id \(id)")
             }
         }
+        TestTrackingData().testFirstDayTrackingReportData()
     }
 }

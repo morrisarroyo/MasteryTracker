@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let db : Database = Database()
         db.createTables()
         db.populateTrackingTables()
-        TestTrackingData().testFirstDayTrackingReportData()
+        //TestTrackingData().testFirstDayTrackingReportData()
         return true
     }
 

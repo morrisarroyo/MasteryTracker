@@ -69,7 +69,8 @@ import UIKit
             print("setTracking, No trackedReport for id \(id) and typeId \(type)")
         }
         let df = DateFormatter()
-        df.locale = Locale(identifier: "en_US_POSIX")
+        df.dateFormat = "YYYY-MM-dd HH:mm:s"
+        print(trackedReport!.firstDay)
         if trackedReport!.firstDay.count > 0 {
             let since = df.date(from: trackedReport!.firstDay)!
             daysSinceFirstTracked = DateUtility.daysDifferenceForDates(from: since, to: Date())
@@ -81,7 +82,6 @@ import UIKit
     
     //Mark: Private Methods
     func updateButtons() {
-        print(daysSinceFirstTracked)
         var countDownToFirst = daysSinceFirstTracked
         for i in (0..<trackedDays.count).reversed() {
             if (0 <= countDownToFirst) {
