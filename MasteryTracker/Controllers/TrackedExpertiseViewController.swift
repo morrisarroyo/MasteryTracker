@@ -14,8 +14,6 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var trackedExpertisesTableView: UITableView!
     @IBOutlet weak var trackedToggle: UISegmentedControl!
     
-    @IBOutlet weak var weekDaysLeading: NSLayoutConstraint!
-    
     var expertises = [Expertise]()
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
         //print("Unwind to Root View Controller")
@@ -50,11 +48,15 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         cell.ratingLabel.text = expertise.rating.description
         cell.WeekTracker.setTracking(id: expertise.id, type: CriteriaType.expertise)
         cell.WeekTracker.updateButtons()
-        weekDaysLeading.constant = cell.WeekTracker.frame.origin.x
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = trackedExpertisesTableView.dequeueReusableCell(withIdentifier: "HeaderCell")
+        headerCell?.backgroundColor = UIColor.lightGray
+        return headerCell
+    }
 
     //MARK: Lifecycle
     override func viewDidLoad() {

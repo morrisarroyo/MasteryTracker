@@ -2,7 +2,7 @@ PODS:
   - SQLite.swift (0.11.4):
     - SQLite.swift/standard (= 0.11.4)
   - SQLite.swift/standard (0.11.4)
-  - SwiftFormat/CLI (0.30.0)
+  - SwiftFormat/CLI (0.30.1)
 
 DEPENDENCIES:
   - SQLite.swift
@@ -10,7 +10,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
-  SwiftFormat: 51ff30f86e1ef438babbda2e0f3e1e8f53b4e942
+  SwiftFormat: a5fec70fd50f4c04685bf122ffda4fc782eca713
 
 PODFILE CHECKSUM: 46b85de757514a2772543eb8387b3ebd994463cf
 
