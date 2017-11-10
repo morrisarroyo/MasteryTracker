@@ -11,13 +11,11 @@ import UIKit
 class TrackedDay: NSObject {
     var dayOffset: Int
     var done: Bool
-    var objectId: Int
-    var typeId: Int
+    var trackingId: Int
     
-    init (dayOffset: Int, done: Bool, objectId: Int, typeId: Int) {
+    init (dayOffset: Int, done: Bool, trackingId: Int) {
         self.dayOffset = dayOffset
         self.done = done
-        self.objectId = objectId
-        self.typeId = typeId
+        self.trackingId = trackingId
     }
 }

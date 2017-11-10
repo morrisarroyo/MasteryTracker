@@ -57,8 +57,7 @@ class TrackedAbstraction {
                 let trackedDay = TrackedDay(
                     dayOffset: try day.get(dayOffset)
                     ,done:     try day.get(done)
-                    ,objectId: try day.get(objectId)
-                    ,typeId:   try day.get(typeId)
+                    ,trackingId: try day.get(trackingId)
                 )
                 days.append(trackedDay)
             }
@@ -66,17 +65,6 @@ class TrackedAbstraction {
             print("Failed to get list of tracked days from database of expertise id \(id)")
         }
         return days
-        /*
-         let query = expertisesTable.filter(subskillId == num)
-         do {
-         for expertise in try db.prepare(query) {
-         let exp = Expertise(id: try expertise.get(id),  name: try expertise.get(name), rating: try expertise.get(rating), tracked: try expertise.get(tracked), subskillId: try expertise.get(subskillId))
-         expertises.append(exp!)
-         }
-         } catch {
-         print("Failed to get list of expertises from database");
-         }
-         return expertises*/
     }
     
     /*
@@ -115,53 +103,27 @@ class TrackedAbstraction {
         }
         return trackedIdValue
     }
-    /*
-     
-     let reportId = Expression<Int>("id")
-     let currentStreak = Expression<Int>("currentStreak")
-     let longestStreak = Expression<Int>("longestStreak")
-     let daysSinceFirst = Expression<Int>("daysSinceFirst")
-     let history = Expression<String>("history")
-     
-     static func listExpertisesRows() {
-     let id = Expression<Int>("id")
-     let name = Expression<String>("name")
-     //let rating = Expression<Int>("rating")
-     let tracked = Expression<Bool>("tracked")
-     //let subskillId = Expression<Int>("subskillId")
-     
-     let db = Database().db
-     let expertisesTable = Table(tableName)
-     do {
-     for expertise in try db.prepare(expertisesTable) {
-     print((try expertise.get(name)) + String(try expertise.get(id)) + String(try expertise.get(tracked)))
-     }
-     } catch {
-     print("Failed to get list of expertises from database");
-     }
-     }
-     
-     static func getTrackedExpertises() -> [Expertise]{
-     let id = Expression<Int>("id")
-     let name = Expression<String>("name")
-     let rating = Expression<Int>("rating")
-     let tracked = Expression<Bool>("tracked")
-     let subskillId = Expression<Int>("subskillId")
-     let db = Database().db
-     let expertisesTable = Table("expertises")
-     var expertises = [Expertise]()
-     let query = expertisesTable.filter(tracked == true)
-     do {
-     for expertise in try db.prepare(query) {
-     let exp = Expertise(id: try expertise.get(id),  name: try expertise.get(name), rating: try expertise.get(rating), tracked: try expertise.get(tracked), subskillId: try expertise.get(subskillId))
-     expertises.append(exp!)
-     }
-     } catch {
-     print("Failed to get instance of Expertise from database");
-     }
-     
-     return expertises
-     
-     }*/
+    
+    func updateTrackedDay(_ trackedDay: TrackedDay) {
+        let db = Database().db
+        let query = trackedDays.filter(dayOffset == trackedDay.dayOffset && trackingId == trackedDay.trackingId)
+        do {
+            try db.run(query.update(done <- trackedDay.done))
+        } catch let error {
+            print("updateTrackedDay, tracked day of trackingId \(trackedDay.trackingId) and dayOffset of \(trackedDay.dayOffset) doesn't exist")
+            print("updateTrackedDay, trackedDays table query error for trackingId \(trackedDay.trackingId): \(error)")
+        }
+    }
+    
+    func updateTrackedReport(_ trackedReport: TrackedReport) {
+        let db = Database().db
+        let query = trackedReports.filter(trackingId == trackedReport.trackingId)
+        do {
+            try db.run(query.update(currentStreak <- trackedReport.currentStreak, longestStreak <- trackedReport.longestStreak, daysSinceFirst <- trackedReport.daysSinceFirst, history <- trackedReport.history))
+        } catch let error {
+            print("updateTrackedReport, tracked report of trackingId \(trackedReport.trackingId) doesn't exist")
+            print("updateTrackedReport trackedReports table query error for trackingId \(trackedReport.trackingId): \(error)")
+        }
+    }
 }
 
