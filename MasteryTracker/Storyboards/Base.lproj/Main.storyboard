@@ -49,15 +49,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-R1-qsA" customClass="WeekDays" customModule="MasteryTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="399" height="89.666666666666671"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-R1-qsA" customClass="WeekDays" customModule="MasteryTracker" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="398" height="89.666666666666671"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="8uu-R1-qsA" secondAttribute="trailing" constant="15" id="VCl-J6-f9M"/>
+                                                <constraint firstAttribute="trailing" secondItem="8uu-R1-qsA" secondAttribute="trailing" constant="8" id="CXI-cR-DlC"/>
                                                 <constraint firstItem="8uu-R1-qsA" firstAttribute="top" secondItem="mTr-Kg-iZf" secondAttribute="top" id="Z3S-t8-AjJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="8uu-R1-qsA" secondAttribute="bottom" id="bUj-jD-dvZ"/>
-                                                <constraint firstItem="8uu-R1-qsA" firstAttribute="leading" secondItem="mTr-Kg-iZf" secondAttribute="leading" id="irI-Xc-Vrb"/>
+                                                <constraint firstItem="8uu-R1-qsA" firstAttribute="leading" secondItem="mTr-Kg-iZf" secondAttribute="leading" constant="8" id="irI-Xc-Vrb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

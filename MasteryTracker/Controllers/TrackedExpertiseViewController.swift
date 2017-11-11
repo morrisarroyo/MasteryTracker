@@ -54,7 +54,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = trackedExpertisesTableView.dequeueReusableCell(withIdentifier: "HeaderCell")
-        headerCell?.backgroundColor = UIColor.lightGray
+        headerCell?.backgroundColor = UIColor.white
         return headerCell
     }
 
@@ -66,7 +66,8 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
          */
         // Load Sample Data
         trackedExpertisesTableView.dataSource = self
-            trackedExpertisesTableView.delegate = self
+        trackedExpertisesTableView.delegate = self
+        trackedExpertisesTableView.sectionHeaderHeight = 35
         loadExpertises()
         
         // Uncomment the following line to preserve selection between presentations

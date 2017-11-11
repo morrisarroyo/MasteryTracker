@@ -56,15 +56,20 @@ class WeekDays: UIStackView {
             // Attributes
             label.textAlignment = NSTextAlignment.center
             label.adjustsFontSizeToFitWidth = true
+            label.lineBreakMode = .byWordWrapping
             label.numberOfLines = 2
             
             // Set Label Text
             
             label.text = formatter.string(from: date)
+            label.font = UIFont.systemFont(ofSize: 11.0)
             date = NSCalendar.current.date(byAdding: .day, value: -1, to: date)!
             // Constraints
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.widthAnchor.constraint(lessThanOrEqualToConstant: width).isActive = true
+            label.translatesAutoresizingMaskIntoConstraints = true
+            //NSLayoutConstraint(item:label, attribute: .width, relatedBy: .equal, toItem: label, attribute: .height, multiplier: 1.33333, constant: 0.0).isActive = true
+            //label.widthAnchor.constraint(equalToConstant: width).isActive = true
+            //label.heightAnchor.constraint(equalToConstant: width).isActive = true
+            
             dayLabels.append(label)
         }
         dayLabels = dayLabels.reversed()
@@ -76,5 +81,6 @@ class WeekDays: UIStackView {
                 NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: dayLabels[i! - 1], attribute: .width, multiplier: 1.0, constant: 0.0).isActive = true
             }
         }
+        NSLayoutConstraint(item: dayLabels[0], attribute: .width, relatedBy: .equal, toItem: dayLabels[dayLabels.count - 1], attribute: .width, multiplier: 1.0, constant: 0.0).isActive = true
     }
 }
