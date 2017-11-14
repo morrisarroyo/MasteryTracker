@@ -35,6 +35,7 @@ class TrackedAbstraction {
     let reportId        = Expression<Int>("id")
     let currentStreak   = Expression<Int>("currentStreak")
     let longestStreak   = Expression<Int>("longestStreak")
+    let total           = Expression<Int>("total")
     let firstDay        = Expression<String>("firstDay")
     let history         = Expression<String>("history")
     //
@@ -45,6 +46,82 @@ class TrackedAbstraction {
     
     convenience init () {
         self.init(daysCount: 7)
+    }
+    
+    func getTrackedReportsForTrackedExpertises() -> [TrackedReport] {
+        var reports: [TrackedReport] = []
+        let db = Database().db
+        let expertise = Table("expertises")
+        let expId = Expression<Int>("id")
+        let expTracked = Expression<Bool>("tracked")
+        let expertiseTracked = expertise.join(tracked, on: objectId == expertise[expId] && typeId == CriteriaType.expertise.rawValue)
+        let expertiseTrackedReports = expertiseTracked.join(expertiseTracked, on: trackingId == tracked[trackedId])
+        let query = expertiseTrackedReports.filter(expTracked == true)
+        do {
+            for report in try db.prepare(query) {
+                let trackedReport = TrackedReport(
+                    reportId:       try report.get(trackedReports[reportId])
+                    ,currentStreak: try report.get(currentStreak)
+                    ,longestStreak: try report.get(longestStreak)
+                    ,total:         try report.get(total)
+                    ,firstDay:      try report.get(firstDay)
+                    ,history:       try report.get(history)
+                    ,trackingId:    try report.get(self.trackingId))
+                reports.append(trackedReport)
+            }
+        } catch {
+            print("Failed to get list of tracked expertises from tracked reports table")
+        }
+        return reports
+    }
+    
+    func getTrackedReport(trackingId: Int) -> TrackedReport? {
+        var trackedReport: TrackedReport?
+        let db = Database().db
+        let query = trackedReports.filter(self.trackingId == trackingId)
+        do {
+            if let tr = try db.pluck(query) {
+                trackedReport = TrackedReport(
+                    reportId:       try tr.get(trackedReports[reportId])
+                    ,currentStreak: try tr.get(currentStreak)
+                    ,longestStreak: try tr.get(longestStreak)
+                    ,total:         try tr.get(total)
+                    ,firstDay:      try tr.get(firstDay)
+                    ,history:       try tr.get(history)
+                    ,trackingId:    try tr.get(self.trackingId))
+            } else {
+                print("getTrackedReport, tracked report of trackingId \(trackingId) doesn't exist")
+                return nil
+            }
+        } catch let error {
+            print("getTrackedReport trackedReports table query error for trackingId \(trackingId): \(error)")
+        }
+        return trackedReport
+    }
+    
+    func getTrackedReportForExpertise(id: Int) -> TrackedReport? {
+        var trackedReport: TrackedReport?
+        let db = Database().db
+        let joined = tracked.join(trackedReports, on: trackingId == tracked[trackedId])
+        let query = joined.filter(joined[typeId] == CriteriaType.expertise.rawValue && joined[objectId] == id)
+        do {
+            if let tr = try db.pluck(query) {
+                trackedReport = TrackedReport(
+                     reportId:      try tr.get(trackedReports[reportId])
+                    ,currentStreak: try tr.get(currentStreak)
+                    ,longestStreak: try tr.get(longestStreak)
+                    ,total:         try tr.get(total)
+                    ,firstDay:      try tr.get(firstDay)
+                    ,history:       try tr.get(history)
+                    ,trackingId:    try tr.get(trackingId))
+            } else {
+                print("getTrackedReportForExpertise, tracked report of expertiseId \(id) doesn't exist")
+                return nil
+            }
+        } catch let error {
+            print("getTrackedReportForExpertise, trackedReports table query error for expertiseId \(id): \(error)")
+        }
+        return trackedReport
     }
     
     func getTrackedDaysForExpertise(id: Int) -> [TrackedDay]{
@@ -66,30 +143,6 @@ class TrackedAbstraction {
             print("Failed to get list of tracked days from database of expertise id \(id)")
         }
         return days
-    }
-    
-    func getTrackedReportForExpertise(id: Int) -> TrackedReport? {
-        var trackedReport: TrackedReport?
-        let db = Database().db
-        let joined = tracked.join(trackedReports, on: trackingId == tracked[trackedId])
-        let query = joined.filter(joined[typeId] == CriteriaType.expertise.rawValue && joined[objectId] == id)
-        do {
-            if let tr = try db.pluck(query) {
-                trackedReport = TrackedReport(
-                     reportId:      try tr.get(trackedReports[reportId])
-                    ,currentStreak: try tr.get(currentStreak)
-                    ,longestStreak: try tr.get(longestStreak)
-                    ,firstDay:      try tr.get(firstDay)
-                    ,history:       try tr.get(history)
-                    ,trackingId:    try tr.get(trackingId))
-            } else {
-                print("getTrackedReportForExpertise, tracked report of expertiseId \(id) doesn't exist")
-                return nil
-            }
-        } catch let error {
-            print("getTrackedReportForExpertise, trackedReports table query error for expertiseId \(id): \(error)")
-        }
-        return trackedReport
     }
     
     /*
@@ -123,7 +176,7 @@ class TrackedAbstraction {
             }
         }
         do {
-            try db.run(trackedReports.insert(or: .ignore, currentStreak <- 0, longestStreak <- 0, firstDay <- "", history <- "", trackingId <- trackedIdValue))
+            try db.run(trackedReports.insert(or: .ignore, currentStreak <- 0, longestStreak <- 0, total <- 0, firstDay <- "", history <- "", trackingId <- trackedIdValue))
         } catch let error {
             print("createTrackingForExpertise trackedReports table insertion error for id \(id): \(error)")
         }
@@ -145,7 +198,7 @@ class TrackedAbstraction {
         let db = Database().db
         let query = trackedReports.filter(trackingId == trackedReport.trackingId)
         do {
-            try db.run(query.update(currentStreak <- trackedReport.currentStreak, longestStreak <- trackedReport.longestStreak, firstDay <- trackedReport.firstDay, history <- trackedReport.history))
+            try db.run(query.update(currentStreak <- trackedReport.currentStreak, longestStreak <- trackedReport.longestStreak, total <- trackedReport.total, firstDay <- trackedReport.firstDay, history <- trackedReport.history))
         } catch let error {
             print("updateTrackedReport, tracked report of trackingId \(trackedReport.trackingId) doesn't exist")
             print("updateTrackedReport trackedReports table query error for trackingId \(trackedReport.trackingId): \(error)")

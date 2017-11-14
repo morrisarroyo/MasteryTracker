@@ -70,7 +70,7 @@ import UIKit
         }
         let df = DateFormatter()
         df.dateFormat = "YYYY-MM-dd"
-        print(trackedReport!.firstDay)
+        //print(trackedReport!.firstDay)
         if trackedReport!.firstDay.count > 0 {
             let since = df.date(from: trackedReport!.firstDay)!
             daysSinceFirstTracked = DateUtility.daysDifferenceForDates(from: since, to: Date())
@@ -130,7 +130,7 @@ import UIKit
         
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
-           button.heightAnchor.constraint(lessThanOrEqualToConstant: daySize.width).isActive = true
+            button.heightAnchor.constraint(lessThanOrEqualToConstant: daySize.width).isActive = true
             button.widthAnchor.constraint(lessThanOrEqualToConstant: daySize.height).isActive = true
             NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: button, attribute: .height, multiplier: 1.0, constant: 0.0).isActive = true
             //Setup the button action
