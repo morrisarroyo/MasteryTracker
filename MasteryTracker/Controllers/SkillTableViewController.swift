@@ -74,7 +74,7 @@ class SkillTableViewController: UITableViewController {
         cell.id = skill.id
         cell.tapRecognizer1.addTarget(self, action: #selector(SkillTableViewController.showSubskills))
         cell.nextViewImage.gestureRecognizers = []
-       cell.nextViewImage.gestureRecognizers!.append(cell.tapRecognizer1)
+        cell.nextViewImage.gestureRecognizers!.append(cell.tapRecognizer1)
         return cell
     }
     

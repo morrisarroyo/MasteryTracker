@@ -55,6 +55,10 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        performSegue(withIdentifier: "ShowTrackedReportSegue", sender: cell)
+    }
 
     //MARK: Lifecycle
     override func viewDidLoad() {
