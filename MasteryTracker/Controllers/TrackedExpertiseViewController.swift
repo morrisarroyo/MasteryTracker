@@ -12,7 +12,6 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     //MARK: Properties
     
     @IBOutlet weak var trackedExpertisesTableView: UITableView!
-    @IBOutlet weak var trackedToggle: UISegmentedControl!
     
     @IBOutlet weak var weekDaysLeading: NSLayoutConstraint!
     
@@ -80,7 +79,6 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
-        trackedToggle.selectedSegmentIndex = 0
         loadExpertises()
         trackedExpertisesTableView.reloadData()
     }

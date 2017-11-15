@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZO9-A3-Ozh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FhI-33-Jh1">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,18 +28,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RyJ-ex-OR5">
-                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
-                                <segments>
-                                    <segment title="Tracked Expertises"/>
-                                    <segment title="Mastery"/>
-                                </segments>
-                                <connections>
-                                    <segue destination="kdD-iX-n3v" kind="show" identifier="ShowSkillsSegue" id="sYI-R2-UTI"/>
-                                </connections>
-                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-Do-6fI">
+                                <rect key="frame" x="0.0" y="64" width="414" height="47"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-R1-qsA" customClass="WeekDays" customModule="MasteryTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="3" width="409" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8uu-R1-qsA" secondAttribute="height" multiplier="200:20" id="fdM-cc-r5F"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8uu-R1-qsA" secondAttribute="trailing" constant="5" id="Ksy-zg-TY7"/>
+                                    <constraint firstAttribute="bottom" secondItem="8uu-R1-qsA" secondAttribute="bottom" constant="3" id="hdd-6r-txe"/>
+                                    <constraint firstItem="8uu-R1-qsA" firstAttribute="leading" secondItem="bYE-Do-6fI" secondAttribute="leading" id="mTi-1r-NLQ"/>
+                                    <constraint firstItem="8uu-R1-qsA" firstAttribute="top" secondItem="bYE-Do-6fI" secondAttribute="top" constant="3" id="pUW-Lf-dVY"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtN-q6-LXR">
-                                <rect key="frame" x="0.0" y="141.33333333333331" width="414" height="594.66666666666674"/>
+                                <rect key="frame" x="0.0" y="111" width="414" height="576"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackedExpertiseTableViewCell" rowHeight="90" id="IFw-4h-vYz" customClass="TrackedExpertiseTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
@@ -96,51 +104,29 @@
                                     <outlet property="delegate" destination="t9o-IU-EV0" id="eBr-M2-aML"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-Do-6fI">
-                                <rect key="frame" x="0.0" y="100" width="414" height="41"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8uu-R1-qsA" customClass="WeekDays" customModule="MasteryTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="409" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="8uu-R1-qsA" secondAttribute="height" multiplier="200:20" id="fdM-cc-r5F"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8uu-R1-qsA" secondAttribute="trailing" constant="5" id="Ksy-zg-TY7"/>
-                                    <constraint firstAttribute="bottom" secondItem="8uu-R1-qsA" secondAttribute="bottom" id="hdd-6r-txe"/>
-                                    <constraint firstItem="8uu-R1-qsA" firstAttribute="leading" secondItem="bYE-Do-6fI" secondAttribute="leading" id="mTi-1r-NLQ"/>
-                                    <constraint firstItem="8uu-R1-qsA" firstAttribute="top" secondItem="bYE-Do-6fI" secondAttribute="top" id="pUW-Lf-dVY"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rtN-q6-LXR" firstAttribute="bottom" secondItem="GD1-Tj-3GS" secondAttribute="bottom" id="0xE-Ju-JIg"/>
                             <constraint firstItem="bYE-Do-6fI" firstAttribute="leading" secondItem="GD1-Tj-3GS" secondAttribute="leading" id="2Sg-Ba-zQy"/>
-                            <constraint firstItem="RyJ-ex-OR5" firstAttribute="top" secondItem="GD1-Tj-3GS" secondAttribute="top" id="Bua-qf-w3M"/>
                             <constraint firstItem="rtN-q6-LXR" firstAttribute="leading" secondItem="GD1-Tj-3GS" secondAttribute="leading" id="SRJ-T8-nrR"/>
-                            <constraint firstItem="RyJ-ex-OR5" firstAttribute="leading" secondItem="GD1-Tj-3GS" secondAttribute="leading" id="SnW-QA-Yyg"/>
                             <constraint firstItem="bYE-Do-6fI" firstAttribute="trailing" secondItem="GD1-Tj-3GS" secondAttribute="trailing" id="UAY-YG-cmh"/>
-                            <constraint firstItem="bYE-Do-6fI" firstAttribute="top" secondItem="RyJ-ex-OR5" secondAttribute="bottom" constant="8" symbolic="YES" id="jTd-pT-mJk"/>
-                            <constraint firstItem="RyJ-ex-OR5" firstAttribute="trailing" secondItem="GD1-Tj-3GS" secondAttribute="trailing" id="q5A-L4-SMC"/>
+                            <constraint firstItem="bYE-Do-6fI" firstAttribute="top" secondItem="GD1-Tj-3GS" secondAttribute="top" id="WF9-Vc-fHp"/>
+                            <constraint firstItem="rtN-q6-LXR" firstAttribute="top" secondItem="bYE-Do-6fI" secondAttribute="bottom" id="mmg-la-RTY"/>
                             <constraint firstItem="rtN-q6-LXR" firstAttribute="trailing" secondItem="GD1-Tj-3GS" secondAttribute="trailing" id="vNM-hT-2FC"/>
-                            <constraint firstItem="rtN-q6-LXR" firstAttribute="top" secondItem="bYE-Do-6fI" secondAttribute="bottom" id="wkA-OO-wmj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GD1-Tj-3GS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mastery Tracker" id="woj-eU-4Wj"/>
                     <connections>
                         <outlet property="trackedExpertisesTableView" destination="rtN-q6-LXR" id="vvu-Ox-YYm"/>
-                        <outlet property="trackedToggle" destination="RyJ-ex-OR5" id="gND-ah-T6W"/>
                         <outlet property="weekDaysLeading" destination="mTi-1r-NLQ" id="lTs-re-UWk"/>
                         <segue destination="ter-UM-Ick" kind="show" identifier="ShowTrackedReportSegue" id="4pK-0E-fYz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O6-Wz-duY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530.4347826086957" y="-99.456521739130437"/>
+            <point key="canvasLocation" x="-1797" y="-99"/>
         </scene>
         <!--Skills-->
         <scene sceneID="aqL-vf-3zO">
@@ -150,20 +136,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="KEN-Wr-kVc">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Tracked Expertises"/>
-                                <segment title="Mastery"/>
-                            </segments>
-                            <connections>
-                                <segue destination="Rse-uM-6PZ" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="kfz-ff-s6p"/>
-                            </connections>
-                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SkillTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SkillTableViewCell" id="34g-yQ-OPG" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34g-yQ-OPG" id="geQ-L2-7D0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
@@ -223,15 +198,15 @@
                             <outlet property="delegate" destination="kdD-iX-n3v" id="Ffc-Fg-4qQ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Skills" id="f0B-BT-KW5"/>
                     <connections>
                         <segue destination="Ltd-QF-8I3" kind="show" identifier="ShowSubskillsSegue" id="o7S-BG-dTw"/>
                         <segue destination="Eo9-bp-qbH" kind="show" identifier="ShowSkillDetailSegue" id="bOb-1V-8XR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TD-KC-4di" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Rse-uM-6PZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-780" y="-99"/>
+            <point key="canvasLocation" x="-168" y="-99"/>
         </scene>
         <!--Subskills-->
         <scene sceneID="xnq-TZ-r4h">
@@ -241,20 +216,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="NwK-VN-pZv">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Tracked Expertises"/>
-                                <segment title="Mastery"/>
-                            </segments>
-                            <connections>
-                                <segue destination="bZw-qZ-Pcs" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="iAm-IB-32i"/>
-                            </connections>
-                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SkillTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubskillTableViewCell" id="obJ-nm-t3Q" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obJ-nm-t3Q" id="qAf-qk-0Ga">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
@@ -320,9 +284,8 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMm-bJ-PIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="bZw-qZ-Pcs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-29" y="-99"/>
+            <point key="canvasLocation" x="581" y="-99"/>
         </scene>
         <!--Expertises-->
         <scene sceneID="DZH-22-XYO">
@@ -332,20 +295,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="WjM-YK-0L6">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Tracked Expertises"/>
-                                <segment title="Mastery"/>
-                            </segments>
-                            <connections>
-                                <segue destination="qYJ-BO-lgf" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="iYi-dj-yil"/>
-                            </connections>
-                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpertiseTableViewCell" id="Mei-Zk-kzt" customClass="EntryTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="58" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mei-Zk-kzt" id="s8H-iF-iIb">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
@@ -398,9 +350,8 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k0-j6-rTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="qYJ-BO-lgf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="697" y="-99"/>
+            <point key="canvasLocation" x="1309" y="-99"/>
         </scene>
         <!--Expertise Detail-->
         <scene sceneID="L0e-DD-CAQ">
@@ -410,18 +361,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="vB5-d8-Njv">
-                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
-                                <segments>
-                                    <segment title="Tracked Expertises"/>
-                                    <segment title="Mastery"/>
-                                </segments>
-                                <connections>
-                                    <segue destination="42N-y1-oSz" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="eKZ-He-v5p"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0OU-7x-uY2" userLabel="Rating">
-                                <rect key="frame" x="0.0" y="92" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="66" width="414" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g75-ze-F4t">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="48"/>
@@ -501,7 +442,7 @@
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLv-jx-u29" userLabel="Tracking">
-                                <rect key="frame" x="0.0" y="179" width="96" height="26"/>
+                                <rect key="frame" x="0.0" y="153" width="96" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLf-9Q-Rvb">
                                         <rect key="frame" x="41" y="4.6666666666666572" width="55" height="16"/>
@@ -534,7 +475,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRC-VC-7wB">
-                                <rect key="frame" x="0.0" y="205" width="414" height="531"/>
+                                <rect key="frame" x="0.0" y="179" width="414" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingDescription" rowHeight="90" id="tFf-SA-2nK" customClass="CriteriaTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
@@ -590,7 +531,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smV-o5-giv">
-                                <rect key="frame" x="0.0" y="140" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expertise" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w9u-EG-sy6">
                                         <rect key="frame" x="10" y="8" width="394" height="24"/>
@@ -614,15 +555,12 @@
                             <constraint firstItem="0OU-7x-uY2" firstAttribute="trailing" secondItem="kcd-kW-mT8" secondAttribute="trailing" id="2VM-lD-J7Z"/>
                             <constraint firstItem="gRC-VC-7wB" firstAttribute="trailing" secondItem="kcd-kW-mT8" secondAttribute="trailing" id="2cq-Z0-Ht0"/>
                             <constraint firstItem="0OU-7x-uY2" firstAttribute="trailing" secondItem="kcd-kW-mT8" secondAttribute="trailing" id="4XQ-Ru-BTY"/>
-                            <constraint firstItem="vB5-d8-Njv" firstAttribute="leading" secondItem="kcd-kW-mT8" secondAttribute="leading" id="7DL-Z2-w5a"/>
-                            <constraint firstItem="0OU-7x-uY2" firstAttribute="top" secondItem="vB5-d8-Njv" secondAttribute="bottom" id="9Yd-Ur-50D"/>
                             <constraint firstItem="smV-o5-giv" firstAttribute="height" secondItem="VLv-jx-u29" secondAttribute="height" multiplier="3:2" id="9lv-Ay-DFE"/>
                             <constraint firstItem="gRC-VC-7wB" firstAttribute="bottom" secondItem="kcd-kW-mT8" secondAttribute="bottom" id="D8a-Rf-JG3"/>
                             <constraint firstItem="gRC-VC-7wB" firstAttribute="leading" secondItem="kcd-kW-mT8" secondAttribute="leading" id="MLD-A5-Sgz"/>
-                            <constraint firstItem="vB5-d8-Njv" firstAttribute="trailing" secondItem="kcd-kW-mT8" secondAttribute="trailing" id="NrW-1Z-5xC"/>
+                            <constraint firstItem="0OU-7x-uY2" firstAttribute="top" secondItem="kcd-kW-mT8" secondAttribute="top" constant="2" id="MfQ-80-loB"/>
                             <constraint firstItem="0OU-7x-uY2" firstAttribute="leading" secondItem="kcd-kW-mT8" secondAttribute="leading" id="Rlv-8U-2ez"/>
                             <constraint firstItem="kcd-kW-mT8" firstAttribute="trailing" secondItem="smV-o5-giv" secondAttribute="trailing" id="TxV-00-24z"/>
-                            <constraint firstItem="vB5-d8-Njv" firstAttribute="top" secondItem="kcd-kW-mT8" secondAttribute="top" id="Wld-sA-Zga"/>
                             <constraint firstItem="VLv-jx-u29" firstAttribute="leading" secondItem="kcd-kW-mT8" secondAttribute="leading" id="clF-cy-CFG"/>
                             <constraint firstItem="VLv-jx-u29" firstAttribute="top" secondItem="smV-o5-giv" secondAttribute="bottom" id="fgg-MM-Ocn"/>
                             <constraint firstItem="smV-o5-giv" firstAttribute="leading" secondItem="kcd-kW-mT8" secondAttribute="leading" id="kAX-QS-df7"/>
@@ -647,7 +585,6 @@
                         <action selector="changeRatingWithSender:" destination="c1x-Ht-6Zx" id="rw3-pL-4S5"/>
                     </connections>
                 </tapGestureRecognizer>
-                <exit id="42N-y1-oSz" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="VNJ-qI-EVE">
                     <connections>
                         <action selector="changeRatingWithSender:" destination="c1x-Ht-6Zx" id="htf-v3-cTI"/>
@@ -659,25 +596,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1398.5507246376812" y="-99.456521739130437"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="G27-yD-Pl3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZO9-A3-Ozh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wSP-Yz-gE1">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="t9o-IU-EV0" kind="relationship" relationship="rootViewController" id="Zxj-wG-M7A"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rt5-r6-Tbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2278" y="-99"/>
+            <point key="canvasLocation" x="2010" y="-99"/>
         </scene>
         <!--Subskill Detail-->
         <scene sceneID="PmP-Cx-m7b">
@@ -687,18 +606,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-l5-yhE">
-                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
-                                <segments>
-                                    <segment title="Tracked Expertises"/>
-                                    <segment title="Mastery"/>
-                                </segments>
-                                <connections>
-                                    <segue destination="CTl-jb-bpD" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="cAR-2r-JLD"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llo-aJ-rgk" userLabel="Rating">
-                                <rect key="frame" x="0.0" y="92" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynS-fs-trU">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="48"/>
@@ -778,7 +687,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEA-22-Xaj">
-                                <rect key="frame" x="0.0" y="140" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subskill Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SIA-TL-fyj" userLabel="Subskill Name">
                                         <rect key="frame" x="10" y="8" width="394" height="24"/>
@@ -795,7 +704,7 @@
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4I-ej-Bip" userLabel="Tracking">
-                                <rect key="frame" x="0.0" y="179" width="96" height="26"/>
+                                <rect key="frame" x="0.0" y="151" width="96" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDg-i2-IzX">
                                         <rect key="frame" x="41" y="4.6666666666666572" width="55" height="16"/>
@@ -825,7 +734,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P0l-zh-WhT">
-                                <rect key="frame" x="0.0" y="205" width="414" height="531"/>
+                                <rect key="frame" x="0.0" y="177" width="414" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingDescription" rowHeight="90" id="C6a-kS-bXi" customClass="CriteriaTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
@@ -885,13 +794,10 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="P0l-zh-WhT" firstAttribute="leading" secondItem="zc6-Xe-T9A" secondAttribute="leading" id="0gp-dE-YMy"/>
-                            <constraint firstItem="BKc-l5-yhE" firstAttribute="leading" secondItem="zc6-Xe-T9A" secondAttribute="leading" id="4pa-Di-RU9"/>
-                            <constraint firstItem="llo-aJ-rgk" firstAttribute="top" secondItem="BKc-l5-yhE" secondAttribute="bottom" id="FES-xy-uff"/>
+                            <constraint firstItem="llo-aJ-rgk" firstAttribute="top" secondItem="zc6-Xe-T9A" secondAttribute="top" id="2ar-fh-c0O"/>
                             <constraint firstItem="llo-aJ-rgk" firstAttribute="leading" secondItem="zc6-Xe-T9A" secondAttribute="leading" id="FjA-QG-btZ"/>
                             <constraint firstItem="SEA-22-Xaj" firstAttribute="leading" secondItem="zc6-Xe-T9A" secondAttribute="leading" id="JHy-Cn-RXQ"/>
                             <constraint firstItem="P0l-zh-WhT" firstAttribute="trailing" secondItem="zc6-Xe-T9A" secondAttribute="trailing" id="KDi-1z-c7a"/>
-                            <constraint firstItem="BKc-l5-yhE" firstAttribute="trailing" secondItem="zc6-Xe-T9A" secondAttribute="trailing" id="Kn6-da-dEd"/>
-                            <constraint firstItem="BKc-l5-yhE" firstAttribute="top" secondItem="zc6-Xe-T9A" secondAttribute="top" id="NCF-2G-hTg"/>
                             <constraint firstItem="llo-aJ-rgk" firstAttribute="leading" secondItem="zc6-Xe-T9A" secondAttribute="leading" id="Rah-h2-8sX"/>
                             <constraint firstItem="E4I-ej-Bip" firstAttribute="top" secondItem="SEA-22-Xaj" secondAttribute="bottom" id="TSm-Iv-t6q"/>
                             <constraint firstItem="P0l-zh-WhT" firstAttribute="bottom" secondItem="zc6-Xe-T9A" secondAttribute="bottom" id="WS5-R9-cmV"/>
@@ -916,7 +822,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrw-MJ-sss" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="CTl-jb-bpD" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="UW2-SB-D34">
                     <connections>
                         <action selector="changeRatingWithSender:" destination="3r4-HI-hGJ" id="Zd0-LP-aV9"/>
@@ -928,7 +833,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-29" y="863"/>
+            <point key="canvasLocation" x="583" y="863"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ohh-Vf-WFe">
@@ -939,7 +844,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wtx-bv-ehu">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JQy-2a-RMm">
                                         <rect key="frame" x="20" y="20" width="374" height="36"/>
@@ -998,7 +903,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1p-Aj-j1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530.4347826086957" y="862.50000000000011"/>
+            <point key="canvasLocation" x="-1797" y="863"/>
         </scene>
         <!--Skill Detail-->
         <scene sceneID="LjK-Qb-ime">
@@ -1008,18 +913,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="u0k-Fj-yml">
-                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
-                                <segments>
-                                    <segment title="Tracked Expertises"/>
-                                    <segment title="Mastery"/>
-                                </segments>
-                                <connections>
-                                    <segue destination="1uI-Be-RSD" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="6Ub-Fk-toG"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ked-gm-H6S" userLabel="Rating">
-                                <rect key="frame" x="0.0" y="92" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xtu-Ir-gER">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="48"/>
@@ -1099,7 +994,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRg-ht-a1u">
-                                <rect key="frame" x="0.0" y="140" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="axN-Kb-AJ8" userLabel="Subskill Name">
                                         <rect key="frame" x="10" y="8" width="394" height="24"/>
@@ -1116,7 +1011,7 @@
                                 </constraints>
                             </view>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Haw-D7-uIQ" userLabel="Tracking">
-                                <rect key="frame" x="0.0" y="179" width="96" height="26"/>
+                                <rect key="frame" x="0.0" y="151" width="96" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="us1-wD-3tx">
                                         <rect key="frame" x="41" y="4.6666666666666572" width="55" height="16"/>
@@ -1146,7 +1041,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t0k-59-XZW">
-                                <rect key="frame" x="0.0" y="205" width="414" height="531"/>
+                                <rect key="frame" x="0.0" y="177" width="414" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingDescription" rowHeight="90" id="lbo-G7-rCR" customClass="CriteriaTableViewCell" customModule="MasteryTracker" customModuleProvider="target">
@@ -1205,20 +1100,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="ked-gm-H6S" firstAttribute="top" secondItem="Ipd-KP-nAG" secondAttribute="top" id="0R6-gf-G1L"/>
                             <constraint firstItem="ked-gm-H6S" firstAttribute="leading" secondItem="Ipd-KP-nAG" secondAttribute="leading" id="15j-vr-NrO"/>
                             <constraint firstItem="yRg-ht-a1u" firstAttribute="height" secondItem="Haw-D7-uIQ" secondAttribute="height" multiplier="3:2" id="5Vp-6j-pzg"/>
                             <constraint firstItem="t0k-59-XZW" firstAttribute="top" secondItem="Haw-D7-uIQ" secondAttribute="bottom" id="7ac-0d-SaC"/>
                             <constraint firstItem="Haw-D7-uIQ" firstAttribute="top" secondItem="yRg-ht-a1u" secondAttribute="bottom" id="8Ta-yz-QWA"/>
                             <constraint firstItem="yRg-ht-a1u" firstAttribute="top" secondItem="ked-gm-H6S" secondAttribute="bottom" id="Mor-Hx-fbI"/>
                             <constraint firstItem="t0k-59-XZW" firstAttribute="leading" secondItem="Ipd-KP-nAG" secondAttribute="leading" id="Oyz-U1-W3f"/>
-                            <constraint firstItem="u0k-Fj-yml" firstAttribute="leading" secondItem="Ipd-KP-nAG" secondAttribute="leading" id="Qza-3T-xz0"/>
                             <constraint firstItem="t0k-59-XZW" firstAttribute="bottom" secondItem="Ipd-KP-nAG" secondAttribute="bottom" id="SXN-Yw-UXt"/>
                             <constraint firstItem="yRg-ht-a1u" firstAttribute="leading" secondItem="Ipd-KP-nAG" secondAttribute="leading" id="UK6-ho-GTj"/>
-                            <constraint firstItem="ked-gm-H6S" firstAttribute="top" secondItem="u0k-Fj-yml" secondAttribute="bottom" id="Zqn-WL-Tix"/>
-                            <constraint firstItem="u0k-Fj-yml" firstAttribute="trailing" secondItem="Ipd-KP-nAG" secondAttribute="trailing" id="b6R-80-skO"/>
                             <constraint firstItem="t0k-59-XZW" firstAttribute="trailing" secondItem="Ipd-KP-nAG" secondAttribute="trailing" id="eVn-cG-JCC"/>
                             <constraint firstItem="Haw-D7-uIQ" firstAttribute="leading" secondItem="Ipd-KP-nAG" secondAttribute="leading" id="gho-Qq-seR"/>
-                            <constraint firstItem="u0k-Fj-yml" firstAttribute="top" secondItem="Ipd-KP-nAG" secondAttribute="top" id="gj5-kc-PCk"/>
                             <constraint firstItem="ked-gm-H6S" firstAttribute="leading" secondItem="Ipd-KP-nAG" secondAttribute="leading" id="hQU-4n-zXf"/>
                             <constraint firstItem="Ipd-KP-nAG" firstAttribute="trailing" secondItem="yRg-ht-a1u" secondAttribute="trailing" id="leH-V8-6zq"/>
                             <constraint firstItem="ked-gm-H6S" firstAttribute="trailing" secondItem="Ipd-KP-nAG" secondAttribute="trailing" id="mb6-79-DZY"/>
@@ -1237,7 +1129,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMo-z5-IoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="1uI-Be-RSD" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Sso-6N-vru">
                     <connections>
                         <action selector="changeRatingWithSender:" destination="Eo9-bp-qbH" id="QEJ-3E-hjV"/>
@@ -1249,12 +1140,74 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-780" y="863"/>
+            <point key="canvasLocation" x="-167" y="863"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dxd-he-Jmg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FhI-33-Jh1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Myb-S8-NEd"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DsT-Th-RXN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ODz-sM-Ryp" kind="relationship" relationship="viewControllers" id="N23-9c-JzK"/>
+                        <segue destination="nxo-lP-GXP" kind="relationship" relationship="viewControllers" id="GT6-DX-Has"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFr-qA-3Si" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3351" y="-99"/>
+        </scene>
+        <!--Mastery-->
+        <scene sceneID="g12-pU-ScU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nxo-lP-GXP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mastery" image="list" selectedImage="listGray" id="KRH-o0-IRW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vGX-qn-n4F">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kdD-iX-n3v" kind="relationship" relationship="rootViewController" id="XAH-lH-wcI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIh-l1-uvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949" y="-99"/>
+        </scene>
+        <!--Tracked-->
+        <scene sceneID="5tE-5Z-Bhs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ODz-sM-Ryp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tracked" image="stopwatch" selectedImage="stopwatchGray" id="WYL-ax-KmR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b66-GS-qjr">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t9o-IU-EV0" kind="relationship" relationship="rootViewController" id="xop-hZ-qlk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqg-1z-YDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2568" y="-99"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkboxBlank" width="64" height="64"/>
+        <image name="list" width="25" height="25"/>
+        <image name="listGray" width="25" height="25"/>
         <image name="nextThin" width="32" height="32"/>
         <image name="previousThin" width="32" height="32"/>
+        <image name="stopwatch" width="21" height="25"/>
+        <image name="stopwatchGray" width="21" height="25"/>
     </resources>
 </document>
