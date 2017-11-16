@@ -12,10 +12,10 @@ import UIKit
 
     
     //Mark: Properties
-    private var dayButtons            = [UIButton] ()
-    private var trackedDays           = [TrackedDay]()
-    private var trackedReport         : TrackedReport?
-    private var daysSinceFirstTracked = 0
+    var dayButtons            = [UIButton] ()
+    var trackedDays           = [TrackedDay]()
+    var trackedReport         : TrackedReport?
+    var daysSinceFirstTracked = 0
     @IBInspectable var daySize: CGSize = CGSize(width: 35.0, height: 35.0) {
         didSet {
             setupButtons()
@@ -97,10 +97,16 @@ import UIKit
         abs.updateTrackedDay(day)
         //day.dayOffset
         if (day.done) {
+            trackedReport!.total += 1
+            /*
             trackedReport!.currentStreak += 1
+            
             if (trackedReport!.currentStreak > trackedReport!.longestStreak) {
                 trackedReport!.longestStreak = trackedReport!.currentStreak
             }
+            */
+        } else {
+            trackedReport!.total += 1
         }
         abs.updateTrackedReport(trackedReport!)
     }
@@ -143,4 +149,5 @@ import UIKit
             dayButtons.append(button)
         }
     }
+    
 }

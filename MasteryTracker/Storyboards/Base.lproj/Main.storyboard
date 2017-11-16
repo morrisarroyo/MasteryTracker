@@ -93,9 +93,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="WeekTracker" destination="H3O-gA-PJS" id="By5-2r-Gyw"/>
                                             <outlet property="nameLabel" destination="Ntw-kH-bZy" id="t0U-hB-laS"/>
                                             <outlet property="ratingLabel" destination="W74-n8-ljB" id="wZo-gw-Okc"/>
+                                            <outlet property="weekTracker" destination="H3O-gA-PJS" id="d61-3s-sUQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,6 +120,7 @@
                     <navigationItem key="navigationItem" title="Mastery Tracker" id="woj-eU-4Wj"/>
                     <connections>
                         <outlet property="trackedExpertisesTableView" destination="rtN-q6-LXR" id="vvu-Ox-YYm"/>
+                        <outlet property="weekDays" destination="8uu-R1-qsA" id="e4G-Rh-hyr"/>
                         <outlet property="weekDaysLeading" destination="mTi-1r-NLQ" id="lTs-re-UWk"/>
                         <segue destination="ter-UM-Ick" kind="show" identifier="ShowTrackedReportSegue" id="4pK-0E-fYz"/>
                     </connections>
@@ -835,10 +836,10 @@
             </objects>
             <point key="canvasLocation" x="583" y="863"/>
         </scene>
-        <!--View Controller-->
+        <!--Tracked Report View Controller-->
         <scene sceneID="Ohh-Vf-WFe">
             <objects>
-                <viewController id="ter-UM-Ick" sceneMemberID="viewController">
+                <viewController id="ter-UM-Ick" customClass="TrackedReportViewController" customModule="MasteryTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N2V-3j-Kuz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -900,6 +901,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JEj-jK-XNH"/>
                     </view>
+                    <connections>
+                        <outlet property="message" destination="JQy-2a-RMm" id="fN9-nT-D6D"/>
+                        <outlet property="total" destination="gDs-tO-hat" id="zwe-Ho-mn6"/>
+                        <outlet property="trackedName" destination="tPQ-th-luW" id="sTV-lp-BVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1p-Aj-j1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

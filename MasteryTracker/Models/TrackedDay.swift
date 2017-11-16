@@ -18,4 +18,16 @@ class TrackedDay: NSObject {
         self.done = done
         self.trackingId = trackingId
     }
+    
+    static func getStreakFor(trackedDays: [TrackedDay]) -> Int {
+        var streak = 0
+        for day in trackedDays {
+            if (day.done) {
+                streak += 1
+            } else {
+                break
+            }
+        }
+        return streak
+    }
 }

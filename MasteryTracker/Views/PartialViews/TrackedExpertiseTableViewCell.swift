@@ -13,7 +13,9 @@ class TrackedExpertiseTableViewCell: UITableViewCell {
     //Mark: Properties
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var WeekTracker: WeekTracker!
+    @IBOutlet weak var weekTracker: WeekTracker!
+    var expertise: Expertise!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +26,20 @@ class TrackedExpertiseTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    /*
+    override func prepareForReuse() {
+        ratingLabel.text = nil
+        nameLabel.text = nil
+        weekTracker = WeekTracker()
+    }
 
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        <#code#>
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        
+    }
+ */
 }

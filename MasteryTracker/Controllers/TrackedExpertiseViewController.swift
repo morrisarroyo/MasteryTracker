@@ -14,6 +14,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var trackedExpertisesTableView: UITableView!
     
     @IBOutlet weak var weekDaysLeading: NSLayoutConstraint!
+    @IBOutlet weak var weekDays: WeekDays!
     
     var expertises = [Expertise]()
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
@@ -45,11 +46,12 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         // Fetches the appropriate meal for the data source layout.
         let expertise = expertises[indexPath.row]
         
+        cell.expertise = expertise
         cell.nameLabel.text = expertise.name
         cell.ratingLabel.text = expertise.rating.description
-        cell.WeekTracker.setTracking(id: expertise.id, type: CriteriaType.expertise)
-        cell.WeekTracker.updateButtons()
-        weekDaysLeading.constant = cell.WeekTracker.frame.origin.x
+        cell.weekTracker.setTracking(id: expertise.id, type: CriteriaType.expertise)
+        cell.weekTracker.updateButtons()
+        weekDaysLeading.constant = cell.weekTracker.frame.origin.x
         
         return cell
     }
@@ -67,7 +69,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
          */
         // Load Sample Data
         trackedExpertisesTableView.dataSource = self
-            trackedExpertisesTableView.delegate = self
+        trackedExpertisesTableView.delegate = self
         loadExpertises()
         
         // Uncomment the following line to preserve selection between presentations
@@ -80,6 +82,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         loadExpertises()
+        weekDays.reloadInputViews()
         trackedExpertisesTableView.reloadData()
     }
     
@@ -135,14 +138,16 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+     
+        if let destinationViewController = segue.destination as? TrackedReportViewController {
+            destinationViewController.expertise     = (sender as! TrackedExpertiseTableViewCell).expertise
+        }
     }
-    */
-
 }
