@@ -87,6 +87,9 @@ import UIKit
             if (0 <= countDownToFirst) {
                 dayButtons[i].isEnabled   = true
                 dayButtons[i].isSelected  = trackedDays[i].done
+            } else {
+                dayButtons[i].isSelected  = false
+                dayButtons[i].isEnabled   = false
             }
             countDownToFirst -= 1
         }
@@ -106,7 +109,7 @@ import UIKit
             }
             */
         } else {
-            trackedReport!.total += 1
+            trackedReport!.total -= 1
         }
         abs.updateTrackedReport(trackedReport!)
     }
@@ -133,7 +136,7 @@ import UIKit
             button.setImage(dashMark, for: .disabled)
             button.setImage(xMark, for: .normal)
             button.setImage(checkMark, for: .selected)
-        
+            button.adjustsImageWhenDisabled = true
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(lessThanOrEqualToConstant: daySize.width).isActive = true
