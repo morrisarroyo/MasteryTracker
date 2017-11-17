@@ -76,7 +76,7 @@ import UIKit
             daysSinceFirstTracked = DateUtility.daysDifferenceForDates(from: since, to: Date())
         } else {
             daysSinceFirstTracked = 0
-            print("setTracking, No trackedReport.firstDay for id \(id) and typeId \(type) is not a valid date")
+            print("setTracking, trackedReport.firstDay for id \(id) and typeId \(type) is not a valid date")
         }
     }
     

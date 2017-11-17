@@ -51,7 +51,7 @@ class TrackedExpertiseViewController: UIViewController, UITableViewDataSource, U
         cell.ratingLabel.text = expertise.rating.description
         cell.weekTracker.setTracking(id: expertise.id, type: CriteriaType.expertise)
         cell.weekTracker.updateButtons()
-        weekDaysLeading.constant = cell.weekTracker.frame.origin.x
+        weekDaysLeading.constant = cell.weekTracker.frame.origin.x - 6
         
         return cell
     }
