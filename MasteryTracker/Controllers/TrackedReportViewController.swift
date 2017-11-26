@@ -21,7 +21,7 @@ class TrackedReportViewController: UIViewController {
         let abs = TrackedAbstraction()
         report = abs.getTrackedReportForExpertise(id: expertise.id)
         trackedDays = abs.getTrackedDaysForExpertise(id: expertise.id)
-        message.text = "Gunbatte!"
+        message.text = "Keep Going!"
         trackedName.text = expertise.name
         total.text = report.total.description
         
